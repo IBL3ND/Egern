@@ -1,7 +1,7 @@
 vif_only: true
 geoip_db_url: https://github.com/xream/geoip/releases/latest/download/ipinfo.country.mmdb
 asn_db_url: https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-ASN.mmdb
-proxy_latency_test_url: http://1.1.1.1/cdn-cgi/trace
+proxy_latency_test_url: https://www.apple.com/library/test/success.html
 compat_route: true
 dns:
   upstreams:
