@@ -24,7 +24,7 @@ policy_groups:
     policies:
     - 订阅
     flatten: true
-    icon: https://iili.io/KLr8Sne.png
+    icon: https://iili.io/fKClisn.png
     hidden: false
 - external:
     name: 订阅
