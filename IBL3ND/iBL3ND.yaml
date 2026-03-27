@@ -1,107 +1,123 @@
+allow_external_connections: true
 vif_only: true
+hide_vpn_icon: false
 geoip_db_url: https://github.com/xream/geoip/releases/latest/download/ipinfo.country.mmdb
 asn_db_url: https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-ASN.mmdb
-proxy_latency_test_url: https://www.apple.com/library/test/success.html
+proxy_latency_test_url: https://connectivitycheck.gstatic.com/generate_204
 compat_route: true
 dns:
   upstreams:
-    Global DNS:
+    兜底DNS:
     - quic://223.5.5.5:853
     - quic://223.6.6.6:853
+    - quic://dns.quad9.net:784
+    - quic://dns.alidns.com:853
+    - quic://dns.cloudflare.com:784
+    - https://1.1.1.1/dns-query
     - https://doh.pub/dns-query
+    - https://1.12.12.12/dns-query
     - https://223.5.5.5/dns-query
     - https://223.6.6.6/dns-query
     - https://dns.google/dns-query
+    - https://dns.quad9.net/dns-query
     - https://dns.alidns.com/dns-query
-    - https://dns.cloudflare.com/dns-query
+    - https://cloudflare-dns.com/dns-query
   forward:
-  - wildcard:
+  - domain_wildcard:
       match: '*'
-      value: Global DNS
+      value: 兜底DNS
 policy_groups:
 - select:
     name: PROXY
-    policies:
-    - 订阅
+    policies: []
     flatten: true
     icon: https://iili.io/fKClisn.png
     hidden: false
-- external:
-    name: 订阅
-    type: fallback
-    urls:
-    - 这里填你的机场订阅地址 然后在点右上角保存
-    hidden: true
 rules:
 - rule_set:
-    name: 屏蔽规则
-    match: https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_reject_list.module
-    policy: REJECT
+    name: 域间路由
+    match: https://raw.githubusercontent.com/IBL3ND/rule/refs/heads/main/LAN.list
+    policy: DIRECT
     disabled: false
 - rule_set:
-    name: 代理规则
-    match: https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_proxy_list.module
-    policy: PROXY
+    match: https://whatshub.top/rule/China.list
+    policy: DIRECT
     disabled: false
 - rule_set:
-    name: 直连规则
+    match: https://whatshub.top/rule/ChinaMaxNoMedia.list
+    policy: DIRECT
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/ChinaIPs/ChinaIPs.list
+    policy: DIRECT
+    disabled: false
+- rule_set:
+    match: https://ruleset.skk.moe/List/ip/china_ip_ipv6.conf
+    policy: DIRECT
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/direct.txt
+    policy: DIRECT
+    disabled: false
+- rule_set:
     match: https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_direct_list.module
     policy: DIRECT
-    disabled: false
-- ip_cidr:
-    match: 192.168.0.0/16
-    policy: DIRECT
-- ip_cidr:
-    match: 10.0.0.0/8
-    policy: DIRECT
-- ip_cidr:
-    match: 127.0.0.0/8
-    policy: DIRECT
-- ip_cidr:
-    match: 172.16.0.0/12
-    policy: DIRECT
-- ip_cidr:
-    match: 192.128.0.0/16
-    policy: DIRECT
-- ip_cidr:
-    match: 224.0.0.0/24
-    policy: DIRECT
-- geoip:
-    match: CN
-    policy: DIRECT
-    no_resolve: false
     disabled: false
 - default:
     policy: PROXY
 scriptings:
+- generic:
+    name: 聚合热搜小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/HSW_Widget.JS
+- generic:
+    name: 财联社小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/CLS_Widget.JS
+- generic:
+    name: 万年历小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/CN_Cal.JS
+- generic:
+    name: 节日倒计时小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Holiday_Countdown.js
+- generic:
+    name: 油价查询小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Oil_Widget.JS
+- generic:
+    name: 虚拟货币小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Crypto_Widget.JS
 - schedule:
     name: 每日摸鱼
     cron: 00 07 * * *
     script_url: 摸鱼脚本
+    disabled: true
 - schedule:
     name: 每天60秒
     cron: 00 07 * * *
     script_url: https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/60s.js
+    disabled: true
 mitm:
-  enabled: true
   ca_p12: egern.p12
   ca_passphrase: egern
+widgets:
+- name: 油价查询
+  script_name: 油价查询小组件
+- name: 虚拟货币
+  script_name: 虚拟货币小组件
+- name: 节日倒计时
+  script_name: 节日倒计时小组件
+- name: 万年历
+  script_name: 万年历小组件
+- name: 聚合热搜
+  script_name: 聚合热搜小组件
+- name: 财联社
+  script_name: 财联社小组件
 modules:
-- url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Timecard/Moore/Timecard.sgmodule
+- url: https://raw.githubusercontent.com/Maasea/sgmodule/master/YouTube.Enhance.sgmodule
   enabled: true
-- url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/GPT%20%E5%8F%AF%E7%94%A8%E6%A3%80%E6%B5%8B-%E6%97%A0%20WARP.official.sgmodule
-  enabled: true
-- url: https://whatshub.top/sgmodule/media.sgmodule
-  enabled: true
-- url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/Panel/Net_Speed/Net_Speed.sgmodule
-  enabled: true
-- url: https://whatshub.top/sgmodule/ip-api.sgmodule
-  enabled: true
-- url: https://whatshub.top/sgmodule/crypto.sgmodule
-  enabled: true
-- url: https://raw.githubusercontent.com/158212892/QuantumultXMark/refs/heads/main/My/Egern/modules/pluginhub.yaml
+- url: https://github.com/DualSubs/YouTube/releases/latest/download/DualSubs.YouTube.yaml
   enabled: true
 - url: https://raw.githubusercontent.com/obs1379/Egern/refs/heads/main/surge.qingr.moe_for_Egern.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/158212892/QuantumultXMark/refs/heads/main/My/Egern/modules/pluginhub.yaml
   enabled: true
 - url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E2%AD%90%EF%B8%8F%20BoxJs.official.sgmodule
   enabled: true
