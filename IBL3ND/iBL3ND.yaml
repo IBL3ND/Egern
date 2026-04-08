@@ -93,6 +93,9 @@ scriptings:
 - generic:
     name: 虚拟货币小组件
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Crypto_Widget.JS
+- generic:
+    name: 彩票开奖小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Lottery-Widget.JS
 mitm:
   ca_p12: egern.p12
   ca_passphrase: egern
@@ -101,6 +104,8 @@ widgets:
   script_name: 油价查询小组件
 - name: 虚拟货币
   script_name: 虚拟货币小组件
+- name: 彩票开奖
+  script_name: 彩票开奖小组件
 - name: 节日倒计时
   script_name: 节日倒计时小组件
 - name: 万年历
