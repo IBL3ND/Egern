@@ -4,6 +4,8 @@ hide_vpn_icon: false
 geoip_db_url: https://github.com/xream/geoip/releases/latest/download/ipinfo.country.mmdb
 asn_db_url: https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-ASN.mmdb
 proxy_latency_test_url: https://connectivitycheck.gstatic.com/generate_204
+direct_latency_test_url: https://www.qq.com
+udp_latency_test_url: google.com@8.8.8.8
 compat_route: true
 dns:
   upstreams:
@@ -27,9 +29,16 @@ dns:
       match: '*'
       value: 兜底DNS
 policy_groups:
+- external:
+    name: 订阅
+    type: select
+    urls:
+    - 这里添加你的机场订阅链接
+    hidden: true
 - select:
     name: PROXY
-    policies: []
+    policies:
+    - 订阅
     flatten: true
     icon: https://iili.io/fKClisn.png
     hidden: false
@@ -84,16 +93,6 @@ scriptings:
 - generic:
     name: 虚拟货币小组件
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Crypto_Widget.JS
-- schedule:
-    name: 每日摸鱼
-    cron: 00 07 * * *
-    script_url: 摸鱼脚本
-    disabled: true
-- schedule:
-    name: 每天60秒
-    cron: 00 07 * * *
-    script_url: https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/60s.js
-    disabled: true
 mitm:
   ca_p12: egern.p12
   ca_passphrase: egern
@@ -111,13 +110,15 @@ widgets:
 - name: 财联社
   script_name: 财联社小组件
 modules:
+- url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Telegram.yaml
+  env:
+    CLIENT: Telegram
+  enabled: true
+- url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/surge-loon-to-egern.yaml
+  enabled: true
 - url: https://raw.githubusercontent.com/Maasea/sgmodule/master/YouTube.Enhance.sgmodule
   enabled: true
 - url: https://github.com/DualSubs/YouTube/releases/latest/download/DualSubs.YouTube.yaml
-  enabled: true
-- url: https://raw.githubusercontent.com/obs1379/Egern/refs/heads/main/surge.qingr.moe_for_Egern.sgmodule
-  enabled: true
-- url: https://raw.githubusercontent.com/158212892/QuantumultXMark/refs/heads/main/My/Egern/modules/pluginhub.yaml
   enabled: true
 - url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E2%AD%90%EF%B8%8F%20BoxJs.official.sgmodule
   enabled: true
