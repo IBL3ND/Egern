@@ -44,12 +44,11 @@ policy_groups:
     hidden: false
 rules:
 - rule_set:
-    name: 域间路由
-    match: https://raw.githubusercontent.com/IBL3ND/rule/refs/heads/main/LAN.list
+    match: https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/direct.txt
     policy: DIRECT
     disabled: false
 - rule_set:
-    match: https://whatshub.top/rule/China.list
+    match: https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_direct_list.module
     policy: DIRECT
     disabled: false
 - rule_set:
@@ -61,15 +60,16 @@ rules:
     policy: DIRECT
     disabled: false
 - rule_set:
+    match: https://whatshub.top/rule/China.list
+    policy: DIRECT
+    disabled: false
+- rule_set:
     match: https://ruleset.skk.moe/List/ip/china_ip_ipv6.conf
     policy: DIRECT
     disabled: false
 - rule_set:
-    match: https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/direct.txt
-    policy: DIRECT
-    disabled: false
-- rule_set:
-    match: https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_direct_list.module
+    name: 域间路由
+    match: https://raw.githubusercontent.com/IBL3ND/rule/refs/heads/main/LAN.list
     policy: DIRECT
     disabled: false
 - default:
