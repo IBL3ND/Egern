@@ -28,18 +28,6 @@ dns:
     - https://cloudflare-dns.com/dns-query
   forward:
   - proxy_rule_set:
-      match: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Egern/Rules/Ads_AWAvenue.yaml
-      value: REJECT
-      disabled: false
-  - proxy_rule_set:
-      match: https://raw.githubusercontent.com/Uber-Eins/NetConfig/refs/heads/main/Rules/Advertising.list
-      value: REJECT
-      disabled: false
-  - proxy_rule_set:
-      match: https://adrules.top/adrules.list
-      value: REJECT
-      disabled: false
-  - proxy_rule_set:
       match: https://whatshub.top/rule/Binance.list
       value: 国外dns
       disabled: false
