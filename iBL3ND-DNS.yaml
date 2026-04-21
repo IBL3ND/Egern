@@ -9,24 +9,72 @@ udp_latency_test_url: google.com@8.8.8.8
 compat_route: true
 dns:
   upstreams:
-    国内dns:
-    - quic://223.5.5.5:853
-    - quic://223.6.6.6:853
-    - https://doh.pub/dns-query
-    - https://rubyfish.cn/dns-query
-    - https://dns.alidns.com/dns-query
     国外dns:
     - https://dns.google/dns-query
     - https://dns10.quad9.net/dns-query
     - https://dns.quad9.net/dns-query
     - https://doh.opendns.com/dns-query
     - https://cloudflare-dns.com/dns-query
+    国内dns:
+    - quic://223.5.5.5:853
+    - quic://223.6.6.6:853
+    - https://doh.pub/dns-query
+    - https://rubyfish.cn/dns-query
+    - https://dns.alidns.com/dns-query
     兜底dns:
     - https://dns.nextdns.io
     - https://dns.google/dns-query
     - https://dns.switch.ch/dns-query
     - https://cloudflare-dns.com/dns-query
   forward:
+  - proxy_rule_set:
+      match: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Egern/Rules/Ads_AWAvenue.yaml
+      value: REJECT
+      disabled: false
+  - proxy_rule_set:
+      match: https://raw.githubusercontent.com/Uber-Eins/NetConfig/refs/heads/main/Rules/Advertising.list
+      value: REJECT
+      disabled: false
+  - proxy_rule_set:
+      match: https://adrules.top/adrules.list
+      value: REJECT
+      disabled: false
+  - proxy_rule_set:
+      match: https://whatshub.top/rule/Binance.list
+      value: 国外dns
+      disabled: false
+  - proxy_rule_set:
+      match: https://yfamilys.com/rule/Telegram.list
+      value: 国外dns
+      disabled: false
+  - proxy_rule_set:
+      match: https://yfamilys.com/rule/TikTok.list
+      value: 国外dns
+      disabled: false
+  - proxy_rule_set:
+      match: https://yfamilys.com/rule/YouTube.list
+      value: 国外dns
+      disabled: false
+  - proxy_rule_set:
+      match: https://yfamilys.com/rule/Instagram.list
+      value: 国外dns
+      disabled: false
+  - proxy_rule_set:
+      match: https://yfamilys.com/rule/Twitter.list
+      value: 国外dns
+      disabled: false
+  - proxy_rule_set:
+      match: https://yfamilys.com/rule/ProxyMedia.list
+      value: 国外dns
+      disabled: false
+  - proxy_rule_set:
+      match: https://yfamilys.com/rule/Google.list
+      value: 国外dns
+      disabled: false
+  - proxy_rule_set:
+      match: https://yfamilys.com/rule/Cloudflare.list
+      value: 国外dns
+      disabled: false
   - proxy_rule_set:
       match: https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_proxy_list.module
       value: 国外dns
@@ -45,15 +93,15 @@ dns:
       disabled: false
 policy_groups:
 - external:
-    name: 订阅
+    name: '机场订阅'
     type: select
     urls:
-    - 这里添加你的机场订阅链接
+    - 这里添加你的机场订阅
     hidden: true
 - select:
     name: PROXY
     policies:
-    - 订阅
+    - '机场订阅'
     flatten: true
     icon: https://iili.io/fKClisn.png
     hidden: false
@@ -69,9 +117,6 @@ scriptings:
 - generic:
     name: 聚合热搜小组件
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/HSW_Widget.JS
-- generic:
-    name: 财联社小组件
-    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/CLS_Widget.JS
 - generic:
     name: 万年历小组件
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/CN_Cal.JS
@@ -108,18 +153,26 @@ widgets:
   script_name: 万年历小组件
 - name: 聚合热搜
   script_name: 聚合热搜小组件
-- name: 财联社
-  script_name: 财联社小组件
 modules:
+- url: https://yfamilys.com/module/adultraplus.sgmodule
+  enabled: true
 - url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Telegram.yaml
   env:
     CLIENT: Telegram
   enabled: true
-- url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/surge-loon-to-egern.yaml
-  enabled: true
 - url: https://raw.githubusercontent.com/Maasea/sgmodule/master/YouTube.Enhance.sgmodule
   enabled: true
 - url: https://github.com/DualSubs/YouTube/releases/latest/download/DualSubs.YouTube.yaml
+  compat_arguments:
+    Type: Translate
+  enabled: true
+- name: Revenuecat-系列解锁合集
+  url: http://script.hub/file/_start_/https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js/_end_/Reheji.sgmodule?type=qx-rewrite&target=surge-module&del=true&jqEnabled=true
+  enabled: true
+- name: iTunes-系列解锁合集
+  url: http://script.hub/file/_start_/https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js/_end_/iTunes.sgmodule?type=qx-rewrite&target=surge-module&del=true&jqEnabled=true
+  enabled: true
+- url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/surge-loon-to-egern.yaml
   enabled: true
 - url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E2%AD%90%EF%B8%8F%20BoxJs.official.sgmodule
   enabled: true
