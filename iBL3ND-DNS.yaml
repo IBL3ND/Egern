@@ -213,12 +213,6 @@ mitm:
   ca_p12: egern.p12
   ca_passphrase: egern
 widgets:
-- name: 和风天气
-  script_name: 和风天气小组件
-  env:
-    LOCATION: 海口
-    KEY: f15c7e5f19d5486eaa53964b3a1a667f
-    API_HOST: mx487tfcwn.re.qweatherapi.com
 - name: 测试网络下载速度
   script_name: '测试网络下载速度小组件 '
 - name: 虚拟货币
