@@ -95,12 +95,59 @@ policy_groups:
     hidden: false
 rules:
 - rule_set:
+    match: https://whatshub.top/rule/Binance.list
+    policy: PROXY
+    disabled: false
+- rule_set:
+    match: https://yfamilys.com/rule/Telegram.list
+    policy: PROXY
+    disabled: false
+- rule_set:
+    match: https://yfamilys.com/rule/TikTok.list
+    policy: PROXY
+    disabled: false
+- rule_set:
+    match: https://yfamilys.com/rule/YouTube.list
+    policy: PROXY
+    disabled: false
+- rule_set:
+    match: https://yfamilys.com/rule/Instagram.list
+    policy: PROXY
+    disabled: false
+- rule_set:
+    match: https://yfamilys.com/rule/ProxyMedia.list
+    policy: PROXY
+    disabled: false
+- rule_set:
+    match: https://yfamilys.com/rule/Cloudflare.list
+    policy: PROXY
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_proxy_list.module
+    policy: PROXY
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/direct.txt
+    policy: DIRECT
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_direct_list.module
+    policy: DIRECT
+    disabled: false
+- rule_set:
     name: 域间路由
     match: https://raw.githubusercontent.com/IBL3ND/rule/refs/heads/main/LAN.list
     policy: DIRECT
     disabled: false
 - default:
     policy: PROXY
+scriptings:
+- schedule:
+    name: TestFlight监控
+    cron: '* * * * * ?'
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/TestFlight.js
+    timeout: 120
+    disabled: true
 scriptings:
 - generic:
     name: 聚合热搜小组件
