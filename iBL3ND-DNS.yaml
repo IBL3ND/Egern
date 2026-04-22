@@ -1,6 +1,7 @@
 ipv6: false
 allow_external_connections: true
 vif_only: true
+block_quic: true
 hide_vpn_icon: false
 geoip_db_url: https://github.com/xream/geoip/releases/latest/download/ipinfo.country.mmdb
 asn_db_url: https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-ASN.mmdb
@@ -14,18 +15,23 @@ dns:
     - https://dns.google/dns-query
     - https://dns10.quad9.net/dns-query
     - https://dns.quad9.net/dns-query
+    - https://dns.adguard.com/dns-query
     - https://doh.opendns.com/dns-query
     - https://cloudflare-dns.com/dns-query
     国内dns:
     - quic://223.5.5.5:853
     - quic://223.6.6.6:853
+    - quic://dns.alidns.com:853
     - https://doh.pub/dns-query
+    - https://1.12.12.12/dns-query
+    - https://223.5.5.5/dns-query
     - https://rubyfish.cn/dns-query
     - https://dns.alidns.com/dns-query
     兜底dns:
     - https://dns.nextdns.io
     - https://dns.google/dns-query
     - https://dns.switch.ch/dns-query
+    - https://dns.adguard.com/dns-query
     - https://cloudflare-dns.com/dns-query
   forward:
   - proxy_rule_set:
@@ -82,16 +88,17 @@ dns:
       disabled: false
 policy_groups:
 - external:
-    name: '机场订阅'
+    name: 机场订阅
     type: select
     urls:
-    - 这里添加你的机场订阅
+    - 这里添加你的机场订阅链接
     hidden: true
 - select:
     name: PROXY
     policies:
-    - '机场订阅'
+    - 机场订阅
     flatten: true
+    block_quic: true
     icon: https://iili.io/fKClisn.png
     hidden: false
 rules:
@@ -149,7 +156,14 @@ scriptings:
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/TestFlight.js
     timeout: 120
     disabled: true
-scriptings:
+- generic:
+    name: 和风天气小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Weather_Widget.JS
+    timeout: 120
+- generic:
+    name: 机场订阅小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Sub_Widget.JS
+    timeout: 120
 - generic:
     name: 聚合热搜小组件
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/HSW_Widget.JS
@@ -177,10 +191,10 @@ mitm:
 widgets:
 - name: 测试网络下载速度
   script_name: '测试网络下载速度小组件 '
-- name: 油价查询
-  script_name: 油价查询小组件
 - name: 虚拟货币
   script_name: 虚拟货币小组件
+- name: 油价查询
+  script_name: 油价查询小组件
 - name: 彩票开奖
   script_name: 彩票开奖小组件
 - name: 节日倒计时
