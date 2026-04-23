@@ -13,18 +13,13 @@ dns:
   upstreams:
     国外dns:
     - https://dns.google/dns-query
-    - https://dns10.quad9.net/dns-query
-    - https://dns.quad9.net/dns-query
     - https://dns.adguard.com/dns-query
-    - https://doh.opendns.com/dns-query
     - https://cloudflare-dns.com/dns-query
     国内dns:
     - quic://223.5.5.5:853
     - quic://223.6.6.6:853
     - quic://dns.alidns.com:853
     - https://doh.pub/dns-query
-    - https://1.12.12.12/dns-query
-    - https://223.5.5.5/dns-query
     - https://rubyfish.cn/dns-query
     - https://dns.alidns.com/dns-query
     兜底dns:
