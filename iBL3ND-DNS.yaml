@@ -12,23 +12,63 @@ compat_route: true
 dns:
   upstreams:
     国外dns:
+    - https://1.1.1.1/dns-query
     - https://dns.google/dns-query
-    - https://dns.adguard.com/dns-query
     - https://cloudflare-dns.com/dns-query
+    - https://dns.adguard.com/dns-query
     国内dns:
-    - quic://223.5.5.5:853
-    - quic://223.6.6.6:853
-    - quic://dns.alidns.com:853
+    - https://223.6.6.6/dns-query
+    - https://223.5.5.5/dns-query
     - https://doh.pub/dns-query
-    - https://rubyfish.cn/dns-query
     - https://dns.alidns.com/dns-query
     兜底dns:
-    - https://dns.nextdns.io
+    - https://1.1.1.1/dns-query
     - https://dns.google/dns-query
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.nextdns.io
     - https://dns.switch.ch/dns-query
     - https://dns.adguard.com/dns-query
-    - https://cloudflare-dns.com/dns-query
   forward:
+  - proxy_rule_set:
+      match: https://yfamilys.com/rule/DouYin.list
+      value: 国内dns
+      disabled: false
+  - proxy_rule_set:
+      match: https://yfamilys.com/rule/TikTok.list
+      value: 国外dns
+      disabled: false
+  - proxy_rule_set:
+      match: https://raw.githubusercontent.com/IBL3ND/rule/refs/heads/main/Gemini.list
+      value: 国外dns
+      disabled: false
+  - proxy_rule_set:
+      match: https://whatshub.top/rule/Gemini.list
+      value: 国外dns
+      disabled: false
+  - proxy_rule_set:
+      match: https://whatshub.top/rule/OpenAI.list
+      value: 国外dns
+      disabled: false
+  - proxy_rule_set:
+      match: https://www.naiixi.com/Extra_Crypto.list
+      value: 国外dns
+      disabled: false
+  - proxy_rule_set:
+      match: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/rule/openai.list
+      value: 国外dns
+      disabled: false
+  - proxy_rule_set:
+      match: https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list
+      value: 国外dns
+      disabled: false
+  - proxy_rule_set:
+      match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OpenAI/OpenAI.list
+      value: 国外dns
+      disabled: false
+  - proxy_rule_set:
+      match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Crypto/Crypto.list
+      value: 国外dns
+      disabled: false
   - proxy_rule_set:
       match: https://whatshub.top/rule/Binance.list
       value: 国外dns
@@ -38,7 +78,7 @@ dns:
       value: 国外dns
       disabled: false
   - proxy_rule_set:
-      match: https://yfamilys.com/rule/TikTok.list
+      match: https://yfamilys.com/rule/Twitter.list
       value: 国外dns
       disabled: false
   - proxy_rule_set:
@@ -66,6 +106,10 @@ dns:
       value: 国外dns
       disabled: false
   - proxy_rule_set:
+      match: https://kelee.one/Tool/Loon/Lsr/AI.lsr
+      value: 国外dns
+      disabled: false
+  - proxy_rule_set:
       match: https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_proxy_list.module
       value: 国外dns
       disabled: false
@@ -82,56 +126,1755 @@ dns:
       value: 兜底dns
       disabled: false
 policy_groups:
-- external:
-    name: 机场订阅
-    type: select
-    urls:
-    - 这里添加上你的机场订阅链接
-    hidden: true
 - select:
-    name: PROXY
+    name: iBL3ND
     policies:
-    - 机场订阅
-    flatten: true
-    block_quic: true
-    icon: https://iili.io/fKClisn.png
+    - 手动选择
+    - DIRECT
+    - 新国节点
+    - 香港节点
+    - 日本节点
+    - 韩国节点
+    - 台湾节点
+    - 美国节点
+    - 马来节点
+    - 泰国节点
+    - 印度节点
+    - 越南节点
+    - 专线节点
+    - AiTk节点
+    - 澳门节点
+    - 菲律宾节点
+    - 印度尼西亚节点
+    - 柬埔寨节点
+    - 不丹节点
+    - 缅甸节点
+    - 老挝节点
+    - 澳大利亚
+    - 尼泊尔节点
+    - 巴基斯坦节点
+    - 孟加拉节点
+    - 斯里兰卡节点
+    - 蒙古节点
+    - 土库曼斯坦节点
+    - 哈萨克斯坦节点
+    - 乌兹别克斯坦节点
+    - 土耳其节点
+    - 塔吉克斯坦节点
+    - 马尔代夫节点
+    - 伊朗节点
+    - 吉尔吉斯斯坦节点
+    - 以色列节点
+    - 阿联酋节点
+    - 沙特阿拉伯节点
+    - 卡塔尔节点
+    - 科威特节点
+    - 阿曼节点
+    - 巴林节点
+    - 约旦节点
+    - 黎巴嫩节点
+    - 叙利亚节点
+    - 伊拉克节点
+    - 阿富汗节点
+    - 也门节点
+    - 马尔代夫节点
+    - 不丹节点
+    - 塔吉克斯坦节点
+    - 土库曼斯坦节点
+    - 吉尔吉斯斯坦节点
+    - 东帝汶节点
+    - 亚美尼亚节点
+    - 阿塞拜疆节点
+    - 格鲁吉亚节点
+    - 阿尔巴尼亚节点
+    - 安道尔节点
+    - 奥地利节点
+    - 白俄罗斯节点
+    - 比利时节点
+    - 波黑节点
+    - 保加利亚节点
+    - 克罗地亚节点
+    - 塞浦路斯节点
+    - 捷克节点
+    - 丹麦节点
+    - 爱沙尼亚节点
+    - 芬兰节点
+    - 法国节点
+    - 德国节点
+    - 希腊节点
+    - 匈牙利节点
+    - 冰岛节点
+    - 爱尔兰节点
+    - 意大利节点
+    - 拉脱维亚节点
+    - 列支敦士登节点
+    - 立陶宛节点
+    - 卢森堡节点
+    - 马耳他节点
+    - 摩尔多瓦节点
+    - 摩纳哥节点
+    - 黑山节点
+    - 荷兰节点
+    - 北马其顿节点
+    - 挪威节点
+    - 波兰节点
+    - 葡萄牙节点
+    - 罗马尼亚节点
+    - 俄罗斯节点
+    - 圣马力诺节点
+    - 塞尔维亚节点
+    - 斯洛伐克节点
+    - 斯洛文尼亚节点
+    - 西班牙节点
+    - 瑞典节点
+    - 瑞士节点
+    - 乌克兰节点
+    - 英国节点
+    - 阿根廷节点
+    - 阿尔及利亚节点
+    - 安哥拉节点
+    - 安提瓜和巴布达节点
+    - 巴巴多斯节点
+    - 巴布亚新几内亚节点
+    - 巴哈马节点
+    - 巴拉圭节点
+    - 贝宁节点
+    - 博茨瓦纳节点
+    - 巴西节点
+    - 布基纳法索节点
+    - 布隆迪节点
+    - 佛得角节点
+    - 喀麦隆节点
+    - 加拿大节点
+    - 中央非洲共和国节点
+    - 乍得节点
+    - 智利节点
+    - 科摩罗节点
+    - 刚果共和国节点
+    - 刚果民主共和国节点
+    - 哥斯达黎加节点
+    - 科特迪瓦节点
+    - 古巴节点
+    - 吉布提节点
+    - 多米尼克节点
+    - 多米尼加共和国节点
+    - 厄瓜多尔节点
+    - 埃及节点
+    - 萨尔瓦多节点
+    - 赤道几内亚节点
+    - 厄立特里亚节点
+    - 埃塞俄比亚节点
+    - 斐济节点
+    - 加蓬节点
+    - 冈比亚节点
+    - 加纳节点
+    - 格林纳达节点
+    - 危地马拉节点
+    - 几内亚节点
+    - 几内亚比绍节点
+    - 圭亚那节点
+    - 海地节点
+    - 洪都拉斯节点
+    - 牙买加节点
+    - 肯尼亚节点
+    - 基里巴斯节点
+    - 科索沃节点
+    - 莱索托节点
+    - 利比里亚节点
+    - 利比亚节点
+    - 马达加斯加节点
+    - 马拉维节点
+    - 马里节点
+    - 毛里塔尼亚节点
+    - 毛里求斯节点
+    - 墨西哥节点
+    - 密克罗尼西亚节点
+    - 莫桑比克节点
+    - 纳米比亚节点
+    - 瑙鲁节点
+    - 新西兰节点
+    - 尼加拉瓜节点
+    - 尼日尔节点
+    - 尼日利亚节点
+    - 朝鲜节点
+    - 巴劳节点
+    - 巴拿马节点
+    - 秘鲁节点
+    - 卢旺达节点
+    - 圣基茨和尼维斯节点
+    - 圣卢西亚节点
+    - 圣文森特和格林纳丁斯节点
+    - 萨摩亚节点
+    - 圣多美和普林西比节点
+    - 塞内加尔节点
+    - 塞舌尔节点
+    - 塞拉利昂节点
+    - 新国节点
+    - 所罗门群岛节点
+    - 索马里节点
+    - 南非节点
+    - 南苏丹节点
+    - 苏丹节点
+    - 苏里南节点
+    - 斯威士兰节点
+    - 坦桑尼亚节点
+    - 多哥节点
+    - 汤加节点
+    - 特立尼达和多巴哥节点
+    - 突尼斯节点
+    - 图瓦卢节点
+    - 乌干达节点
+    - 乌拉圭节点
+    - 瓦努阿图节点
+    - 梵蒂冈城节点
+    - 委内瑞拉节点
+    - 赞比亚节点
+    - 津巴布韦节点
+    flatten: false
+    icon: https://iili.io/K0KrBdQ.png
     hidden: false
 - select:
-    name: YouTube
+    name: AiTk节点
     policies:
-    - PROXY
+    - 台湾节点
+    - 日本节点
+    - 韩国节点
+    - 新国节点
+    - 美国节点
+    flatten: true
+    icon: https://iili.io/KSBUGgn.png
+    hidden: false
+- select:
+    name: 手动选择
+    policies: []
+    flatten: true
+    block_quic: true
+    icon: https://iili.io/K0KvJv1.png
+    hidden: false
+- auto_test:
+    name: 香港节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: ^(?!.*×).*(?:🇭🇰|Hong Kong|Hong|HK|HKG|香港).*$
+    interval: 60
+    tolerance: 0
+    block_quic: true
+    icon: https://iili.io/FaAI3Bt.png
+    hidden: false
+- auto_test:
+    name: 新国节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇸🇬|新加坡|Singapore|SG
+    interval: 60
+    tolerance: 0
+    icon: https://iili.io/FaRfFXn.png
+    hidden: false
+- auto_test:
+    name: 台湾节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇹🇼|台湾|Taiwan|TW|Tai
+    interval: 60
+    tolerance: 0
+    icon: https://iili.io/Kb9Iauj.png
+    hidden: false
+- auto_test:
+    name: 日本节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: \b(?!.*×)\b(🇯🇵|日本|Japan|JP)\b
+    interval: 60
+    tolerance: 0
+    icon: https://iili.io/Fa5AnTb.png
+    hidden: false
+- auto_test:
+    name: 韩国节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇰🇷|韩国|Korea|KR
+    interval: 60
+    tolerance: 0
+    icon: https://iili.io/Fa5Mdn1.png
+    hidden: false
+- auto_test:
+    name: 美国节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇺🇸|美国|United States|USA|US|States
+    interval: 60
+    tolerance: 0
+    icon: https://iili.io/FaAug7s.png
+    hidden: false
+- auto_test:
+    name: 马来节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇲🇾|马来西亚|马来|Malaysia|MY|Malay
+    interval: 60
+    tolerance: 0
+    icon: https://iili.io/FaA7mPV.png
+    hidden: true
+- auto_test:
+    name: 泰国节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇹🇭|泰国|THA|TH
+    interval: 60
+    tolerance: 0
+    icon: https://iili.io/FaA5hmb.png
+    hidden: true
+- auto_test:
+    name: 印度节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇮🇳|印度|India|IND|IN
+    interval: 60
+    tolerance: 0
+    icon: https://iili.io/FaARol9.png
+    hidden: true
+- auto_test:
+    name: 越南节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇻🇳|越南|VNM|VN
+    interval: 60
+    tolerance: 0
+    icon: https://iili.io/FaTC2yP.png
+    hidden: true
+- auto_test:
+    name: 专线节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: IEPL|IPLC|BGP
+    icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/Twoandz9/Fast.png
+    hidden: true
+- auto_test:
+    name: 澳门节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇲🇴|澳门|MAC|MO
+    interval: 60
+    tolerance: 0
+    hidden: true
+- auto_test:
+    name: 荷兰节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇳🇱|荷兰|NLD|NL
+    hidden: true
+- auto_test:
+    name: 阿根廷节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇦🇷|阿根廷|ARG|AR
+    hidden: true
+- auto_test:
+    name: 阿尔及利亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇩🇿|阿尔及利亚|DZA|DZ
+    hidden: true
+- auto_test:
+    name: 安哥拉节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇦🇴|安哥拉|AGO|AO
+    hidden: true
+- auto_test:
+    name: 安提瓜和巴布达节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇦🇬|安提瓜和巴布达|ATG|AG
+    hidden: true
+- auto_test:
+    name: 巴巴多斯节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇧🇧|巴巴多斯|BRB|BB
+    hidden: true
+- auto_test:
+    name: 纳米比亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇳🇦|纳米比亚|NAM|NA
+    hidden: true
+- auto_test:
+    name: 瑙鲁节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇳🇷|瑙鲁|NRU|NR
+    hidden: true
+- auto_test:
+    name: 新西兰节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇳🇿|新西兰|NZL|NZ
+    hidden: true
+- auto_test:
+    name: 尼加拉瓜节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇳🇮|尼加拉瓜|NIC|NI
+    hidden: true
+- auto_test:
+    name: 尼日尔节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇳🇪|尼日尔|NER|NE
+    hidden: true
+- auto_test:
+    name: 巴勒斯坦节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇵🇸|巴勒斯坦|Palestine|PSE|PS
+    hidden: true
+- auto_test:
+    name: 尼日利亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇳🇬|尼日利亚|NGA|NG
+    hidden: true
+- auto_test:
+    name: 朝鲜节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇰🇵|朝鲜|PRK|KP
+    hidden: true
+- auto_test:
+    name: 澳大利亚
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇦🇺|澳大利亚|Australia|AUS|AU
+    hidden: true
+- auto_test:
+    name: 伯利兹节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇧🇿|伯利兹|Belize|BZ
+    hidden: true
+- auto_test:
+    name: 巴劳节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇵🇼|巴劳|PLW|PW
+    hidden: true
+- auto_test:
+    name: 巴拿马节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇵🇦|巴拿马|PAN|PA
+    hidden: true
+- auto_test:
+    name: 秘鲁节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇵🇪|秘鲁|PER|PE
+    hidden: true
+- auto_test:
+    name: 摩洛哥
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇲🇦|摩洛哥|MAR|MA
+    hidden: true
+- auto_test:
+    name: 卢旺达节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇷🇼|卢旺达|RWA|RW
+    hidden: true
+- auto_test:
+    name: 圣基茨和尼维斯节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇰🇳|圣基茨和尼维斯|KNA|KN
+    hidden: true
+- auto_test:
+    name: 圣卢西亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇱🇨|圣卢西亚|LCA|LC
+    hidden: true
+- auto_test:
+    name: 圣文森特和格林纳丁斯节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇻🇨|圣文森特和格林纳丁斯|VCT|VC
+    hidden: true
+- auto_test:
+    name: 萨摩亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇼🇸|萨摩亚|WSM|WS
+    hidden: true
+- auto_test:
+    name: 圣多美和普林西比节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇸🇹|圣多美和普林西比|STP|ST
+    hidden: true
+- auto_test:
+    name: 塞内加尔节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇸🇳|塞内加尔|SEN|SN
+    hidden: true
+- auto_test:
+    name: 塞舌尔节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇸🇨|塞舌尔|SYC|SC
+    hidden: true
+- auto_test:
+    name: 塞拉利昂节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇸🇱|塞拉利昂|SLE|SL
+    hidden: true
+- auto_test:
+    name: 巴布亚新几内亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇵🇬|巴布亚新几内亚|PNG|PG
+    hidden: true
+- auto_test:
+    name: 巴哈马节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇧🇸|巴哈马|BHS|BS
+    hidden: true
+- auto_test:
+    name: 巴拉圭节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇵🇾|巴拉圭|PRY|PY
+    hidden: true
+- auto_test:
+    name: 贝宁节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇧🇯|贝宁|BEN|BJ
+    hidden: true
+- auto_test:
+    name: 博茨瓦纳节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇧🇼|博茨瓦纳|BWA|BW
+    hidden: true
+- auto_test:
+    name: 巴西节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇧🇷|巴西|BRA|BR
+    hidden: true
+- auto_test:
+    name: 莱索托节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇱🇸|莱索托|LSO|LS
+    hidden: true
+- auto_test:
+    name: 利比里亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇱🇷|利比里亚|LBR|LR
+    hidden: true
+- auto_test:
+    name: 利比亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇱🇾|利比亚|LBY|LY
+    hidden: true
+- auto_test:
+    name: 马达加斯加节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇲🇬|马达加斯加|MDG|MG
+    hidden: true
+- auto_test:
+    name: 马拉维节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇲🇼|马拉维|MWI|MW
+    hidden: true
+- auto_test:
+    name: 马里节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇲🇱|马里|MLI|ML
+    hidden: true
+- auto_test:
+    name: 毛里塔尼亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇲🇷|毛里塔尼亚|MRT|MR
+    hidden: true
+- auto_test:
+    name: 毛里求斯节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇲🇺|毛里求斯|MUS|MU
+    hidden: true
+- auto_test:
+    name: 墨西哥节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇲🇽|墨西哥|MEX|MX
+    hidden: true
+- auto_test:
+    name: 密克罗尼西亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇫🇲|密克罗尼西亚|FSM|FM
+    hidden: true
+- auto_test:
+    name: 莫桑比克节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇲🇿|莫桑比克|MOZ|MZ
+    hidden: true
+- auto_test:
+    name: 布基纳法索节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇧🇫|布基纳法索|BFA|BF
+    hidden: true
+- auto_test:
+    name: 布隆迪节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇧🇮|布隆迪|BDI|BI
+    hidden: true
+- auto_test:
+    name: 佛得角节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇨🇻|佛得角|CPV|CV
+    hidden: true
+- auto_test:
+    name: 喀麦隆节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇨🇲|喀麦隆|CMR|CM
+    hidden: true
+- auto_test:
+    name: 加拿大节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇨🇦|加拿大|CAN|CA
+    hidden: true
+- auto_test:
+    name: 中央非洲共和国节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇨🇫|中央非洲共和国|CAF|CF
+    hidden: true
+- auto_test:
+    name: 乍得节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇹🇩|乍得|TCD|TD
+    hidden: true
+- auto_test:
+    name: 智利节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇨🇱|智利|CHL|CL
+    hidden: true
+- auto_test:
+    name: 科摩罗节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇰🇲|科摩罗|COM|KM
+    hidden: true
+- auto_test:
+    name: 刚果共和国节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇨🇬|刚果共和国|COG|CG
+    hidden: true
+- auto_test:
+    name: 刚果民主共和国节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇨🇩|刚果民主共和国|COD|CD
+    hidden: true
+- auto_test:
+    name: 北马其顿节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇲🇰|北马其顿|MKD|MK
+    hidden: true
+- auto_test:
+    name: 哥斯达黎加节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇨🇷|哥斯达黎加|CRI|CR
+    hidden: true
+- auto_test:
+    name: 科特迪瓦节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇨🇮|科特迪瓦|CIV|CI
+    hidden: true
+- auto_test:
+    name: 古巴节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇨🇺|古巴|CUB|CU
+    hidden: true
+- auto_test:
+    name: 吉布提节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇩🇯|吉布提|DJI|DJ
+    hidden: true
+- auto_test:
+    name: 多米尼克节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇩🇲|多米尼克|DMA|DM
+    hidden: true
+- auto_test:
+    name: 多米尼加共和国节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇩🇴|多米尼加共和国|DOM|DO
+    hidden: true
+- auto_test:
+    name: 厄瓜多尔节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇪🇨|厄瓜多尔|ECU|EC
+    hidden: true
+- auto_test:
+    name: 埃及节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇪🇬|埃及|EGY|EG
+    hidden: true
+- auto_test:
+    name: 萨尔瓦多节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇸🇻|萨尔瓦多|SLV|SV
+    hidden: true
+- auto_test:
+    name: 赤道几内亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇬🇶|赤道几内亚|GNQ|GQ
+    hidden: true
+- auto_test:
+    name: 厄立特里亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇪🇷|厄立特里亚|ERI|ER
+    hidden: true
+- auto_test:
+    name: 埃塞俄比亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇪🇹|埃塞俄比亚|ETH|ET
+    hidden: true
+- auto_test:
+    name: 斐济节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇫🇯|斐济|FJI|FJ
+    hidden: true
+- auto_test:
+    name: 加蓬节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇬🇦|加蓬|GAB|GA
+    hidden: true
+- auto_test:
+    name: 冈比亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇬🇲|冈比亚|GMB|GM
+    hidden: true
+- auto_test:
+    name: 加纳节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇬🇭|加纳|GHA|GH
+    hidden: true
+- auto_test:
+    name: 格林纳达节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇬🇩|格林纳达|GRD|GD
+    hidden: true
+- auto_test:
+    name: 危地马拉节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇬🇹|危地马拉|GTM|GT
+    hidden: true
+- auto_test:
+    name: 几内亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇬🇳|几内亚|GIN|GN
+    hidden: true
+- auto_test:
+    name: 几内亚比绍节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇬🇼|几内亚比绍|GNB|GW
+    hidden: true
+- auto_test:
+    name: 圭亚那节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇬🇾|圭亚那|GUY|GY
+    hidden: true
+- auto_test:
+    name: 海地节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇭🇹|海地|HTI|HT
+    hidden: true
+- auto_test:
+    name: 洪都拉斯节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇭🇳|洪都拉斯|HND|HN
+    hidden: true
+- auto_test:
+    name: 牙买加节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇯🇲|牙买加|JAM|JM
+    hidden: true
+- auto_test:
+    name: 肯尼亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇰🇪|肯尼亚|KEN|KE
+    hidden: true
+- auto_test:
+    name: 基里巴斯节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇰🇮|基里巴斯|KIR|KI
+    hidden: true
+- auto_test:
+    name: 科索沃节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇽🇰|科索沃|XKX|XK
+    hidden: true
+- auto_test:
+    name: 挪威节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇳🇴|挪威|NOR|NO
+    hidden: true
+- auto_test:
+    name: 波兰节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇵🇱|波兰|POL|PL
+    hidden: true
+- auto_test:
+    name: 葡萄牙节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇵🇹|葡萄牙|PRT|PT
+    hidden: true
+- auto_test:
+    name: 罗马尼亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇷🇴|罗马尼亚|ROU|RO
+    hidden: true
+- auto_test:
+    name: 俄罗斯节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇷🇺|俄罗斯|RUS|RU
+    hidden: true
+- auto_test:
+    name: 圣马力诺节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇸🇲|圣马力诺|SMR|SM
+    hidden: true
+- auto_test:
+    name: 塞尔维亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇷🇸|塞尔维亚|SRB|RS
+    hidden: true
+- auto_test:
+    name: 斯洛伐克节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇸🇰|斯洛伐克|SVK|SK
+    hidden: true
+- auto_test:
+    name: 斯洛文尼亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇸🇮|斯洛文尼亚|SVN|SI
+    hidden: true
+- auto_test:
+    name: 西班牙节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇪🇸|西班牙|ESP|ES
+    hidden: true
+- auto_test:
+    name: 瑞典节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇸🇪|瑞典|SWE|SE
+    hidden: true
+- auto_test:
+    name: 瑞士节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇨🇭|瑞士|CHE|CH
+    hidden: true
+- auto_test:
+    name: 乌克兰节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇺🇦|乌克兰|UKR|UA
+    hidden: true
+- auto_test:
+    name: 英国节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: ^(?!.*剩余流量).*?(?:🇬🇧|英国|GBR|GB|EN)
+    hidden: true
+- auto_test:
+    name: 阿尔巴尼亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇦🇱|阿尔巴尼亚|ALB|AL
+    hidden: true
+- auto_test:
+    name: 安道尔节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇦🇩|安道尔|AND|AD
+    hidden: true
+- auto_test:
+    name: 奥地利节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇦🇹|奥地利|AUT|AT
+    hidden: true
+- auto_test:
+    name: 所罗门群岛节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇸🇧|所罗门群岛|SLB|SB
+    hidden: true
+- auto_test:
+    name: 索马里节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇸🇴|索马里|SOM|SO
+    hidden: true
+- auto_test:
+    name: 南非节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇿🇦|南非|ZAF|ZA
+    hidden: true
+- auto_test:
+    name: 南苏丹节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇸🇸|南苏丹|SSD|SS
+    hidden: true
+- auto_test:
+    name: 苏丹节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇸🇩|苏丹|SDN|SD
+    hidden: true
+- auto_test:
+    name: 苏里南节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇸🇷|苏里南|SUR|SR
+    hidden: true
+- auto_test:
+    name: 斯威士兰节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇸🇿|斯威士兰|SWZ|SZ
+    hidden: true
+- auto_test:
+    name: 坦桑尼亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇹🇿|坦桑尼亚|TZA|TZ
+    hidden: true
+- auto_test:
+    name: 多哥节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇹🇬|多哥|TGO|TG
+    hidden: true
+- auto_test:
+    name: 汤加节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇹🇴|汤加|TON|TO
+    hidden: true
+- auto_test:
+    name: 特立尼达和多巴哥节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇹🇹|特立尼达和多巴哥|TTO|TT
+    hidden: true
+- auto_test:
+    name: 突尼斯节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇹🇳|突尼斯|TUN|TN
+    hidden: true
+- auto_test:
+    name: 图瓦卢节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇹🇻|图瓦卢|TUV|TV
+    hidden: true
+- auto_test:
+    name: 乌干达节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇺🇬|乌干达|UGA|UG
+    hidden: true
+- auto_test:
+    name: 乌拉圭节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇺🇾|乌拉圭|URY|UY
+    hidden: true
+- auto_test:
+    name: 瓦努阿图节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇻🇺|瓦努阿图|VUT|VU
+    hidden: true
+- auto_test:
+    name: 梵蒂冈城节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇻🇦|梵蒂冈|VAT|VA
+    hidden: true
+- auto_test:
+    name: 委内瑞拉节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇻🇪|委内瑞拉|VEN|VE
+    hidden: true
+- auto_test:
+    name: 赞比亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇿🇲|赞比亚|ZMB|ZM
+    hidden: true
+- auto_test:
+    name: 津巴布韦节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇿🇼|津巴布韦|ZWE|ZW
+    hidden: true
+- auto_test:
+    name: 白俄罗斯节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇧🇾|白俄罗斯|BLR|BY
+    hidden: true
+- auto_test:
+    name: 比利时节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇧🇪|比利时|BEL|BE
+    hidden: true
+- auto_test:
+    name: 波黑节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇧🇦|波黑|波斯尼亚|波斯尼亜|波斯尼亚和黑塞哥维那|BIH|BA
+    hidden: true
+- auto_test:
+    name: 保加利亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇧🇬|保加利亚|BGR|BG
+    hidden: true
+- auto_test:
+    name: 克罗地亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇭🇷|克罗地亚|HRV|HR
+    hidden: true
+- auto_test:
+    name: 塞浦路斯节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇨🇾|塞浦路斯|CYP|CY
+    icon: https://iili.io/Kq9uM5Q.png
+    hidden: true
+- auto_test:
+    name: 捷克节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇨🇿|捷克|CZE|CZ
+    hidden: true
+- auto_test:
+    name: 丹麦节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇩🇰|丹麦|DNK|DK
+    hidden: true
+- auto_test:
+    name: 爱沙尼亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇪🇪|爱沙尼亚|EST|EE
+    hidden: true
+- auto_test:
+    name: 芬兰节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇫🇮|芬兰|FIN|FI
+    hidden: true
+- auto_test:
+    name: 法国节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇫🇷|法国|FRA|FR
+    hidden: true
+- auto_test:
+    name: 德国节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇩🇪|德国|DEU|DE
+    hidden: true
+- auto_test:
+    name: 希腊节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇬🇷|希腊|GRC|GR
+    hidden: true
+- auto_test:
+    name: 匈牙利节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇭🇺|匈牙利|HUN|HU
+    hidden: true
+- auto_test:
+    name: 冰岛节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇮🇸|冰岛|ISL|IS
+    hidden: true
+- auto_test:
+    name: 爱尔兰节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇮🇪|爱尔兰|IRL|IE
+    hidden: true
+- auto_test:
+    name: 意大利节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇮🇹|意大利|ITA|IT
+    hidden: true
+- auto_test:
+    name: 拉脱维亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇱🇻|拉脱维亚|LVA|LV
+    hidden: true
+- auto_test:
+    name: 列支敦士登节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇱🇮|列支敦士登|LIE|LI
+    hidden: true
+- auto_test:
+    name: 立陶宛节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇱🇹|立陶宛|LTU|LT
+    hidden: true
+- auto_test:
+    name: 卢森堡节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇱🇺|卢森堡|LUX|LU
+    hidden: true
+- auto_test:
+    name: 马耳他节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇲🇹|马耳他|MLT|MT
+    hidden: true
+- auto_test:
+    name: 摩尔多瓦节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇲🇩|摩尔多瓦|MDA|MD
+    hidden: true
+- auto_test:
+    name: 摩纳哥节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇲🇨|摩纳哥|MCO|MC
+    hidden: true
+- auto_test:
+    name: 黑山节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇲🇪|黑山|MNE|ME
+    hidden: true
+- auto_test:
+    name: 东帝汶节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇹🇱|东帝汶|TLS|TL
+    hidden: true
+- auto_test:
+    name: 亚美尼亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇦🇲|亚美尼亚|ARM|AM
+    icon: https://iili.io/KfpSO1n.png
+    hidden: true
+- auto_test:
+    name: 阿塞拜疆节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇦🇿|阿塞拜疆|AZE|AZ
+    icon: https://iili.io/KfpQF3B.png
+    hidden: true
+- auto_test:
+    name: 格鲁吉亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇬🇪|格鲁吉亚|GEO|GE
+    icon: https://iili.io/Kq9G1rN.png
+    hidden: true
+- auto_test:
+    name: 马尔代夫节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇲🇻|马尔代夫|MDV|MV
+    icon: https://iili.io/KqdJbEB.png
+    hidden: true
+- auto_test:
+    name: 不丹节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇧🇹|不丹|BTN|BT
+    icon: https://iili.io/Kfy6Ehv.png
+    hidden: true
+- auto_test:
+    name: 塔吉克斯坦节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇹🇯|塔吉克斯坦|TJK|TJ
+    hidden: true
+- auto_test:
+    name: 土库曼斯坦节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇹🇲|土库曼斯坦|TKM|TM
+    hidden: true
+- auto_test:
+    name: 吉尔吉斯斯坦节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇰🇬|吉尔吉斯斯坦|KGZ|KG
+    icon: https://iili.io/KqJg1V4.png
+    hidden: true
+- auto_test:
+    name: 菲律宾节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇵🇭|菲律宾|PHL|PH
+    hidden: true
+- auto_test:
+    name: 印度尼西亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇮🇩|印度尼西亚|IDN|ID
+    icon: https://iili.io/Kq9rghx.png
+    hidden: true
+- auto_test:
+    name: 柬埔寨节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇰🇭|柬埔寨|KHM|KH
+    icon: https://iili.io/Kq9dVOx.png
+    hidden: true
+- auto_test:
+    name: 缅甸节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇲🇲|缅甸|MMR|MM
+    hidden: true
+- auto_test:
+    name: 老挝节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇱🇦|老挝|LAO|LA
+    icon: https://iili.io/KqJLDj1.png
+    hidden: true
+- auto_test:
+    name: 尼泊尔节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇳🇵|尼泊尔|NPL|NP
+    hidden: true
+- auto_test:
+    name: 巴基斯坦节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇵🇰|巴基斯坦|PAK|PK
+    hidden: true
+- auto_test:
+    name: 孟加拉节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇧🇩|孟加拉|BGD|BD
+    icon: https://iili.io/KfyvTla.png
+    hidden: true
+- auto_test:
+    name: 斯里兰卡节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇱🇰|斯里兰卡|LKA|LK
+    hidden: true
+- auto_test:
+    name: 蒙古节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇲🇳|蒙古|MNG|MN
+    icon: https://iili.io/Kqdo9Ps.png
+    hidden: true
+- auto_test:
+    name: 哈萨克斯坦节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇰🇿|哈萨克斯坦|KAZ|KZ
+    icon: https://iili.io/KqJXxne.png
+    hidden: true
+- auto_test:
+    name: 乌兹别克斯坦节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇺🇿|乌兹别克斯坦|UZB|UZ
+    hidden: true
+- auto_test:
+    name: 土耳其节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇹🇷|土耳其|TUR|TR
+    hidden: true
+- auto_test:
+    name: 伊朗节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇮🇷|伊朗|IRN|IR
+    icon: https://iili.io/KqJqTOX.png
+    hidden: true
+- auto_test:
+    name: 以色列节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇮🇱|以色列|ISR|IL
+    icon: https://iili.io/KqJ57LB.png
+    hidden: true
+- auto_test:
+    name: 阿联酋节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇦🇪|阿联酋|ARE|AE
+    hidden: true
+- auto_test:
+    name: 沙特阿拉伯节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇸🇦|沙特阿拉伯|SAU|SA
+    hidden: true
+- auto_test:
+    name: 卡塔尔节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇶🇦|卡塔尔|QAT|QA
+    hidden: true
+- auto_test:
+    name: 科威特节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇰🇼|科威特|KWT|KW
+    icon: https://iili.io/KqJeUle.png
+    hidden: true
+- auto_test:
+    name: 阿曼节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇴🇲|阿曼|OMN|OM
+    hidden: true
+- auto_test:
+    name: 巴林节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇧🇭|巴林|BHR|BH
+    icon: https://iili.io/KfyMikF.png
+    hidden: true
+- auto_test:
+    name: 约旦节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇯🇴|约旦|JOR|JO
+    icon: https://iili.io/KqJ0pja.png
+    hidden: true
+- auto_test:
+    name: 黎巴嫩节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇱🇧|黎巴嫩|LBN|LB
+    icon: https://iili.io/KqJbEs1.png
+    hidden: true
+- auto_test:
+    name: 叙利亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇸🇾|叙利亚|SYR|SY
+    hidden: true
+- auto_test:
+    name: 伊拉克节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇮🇶|伊拉克|IRQ|IQ
+    icon: https://iili.io/KqJxHw7.png
+    hidden: true
+- auto_test:
+    name: 阿富汗节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇦🇫|阿富汗|AFG|AF
+    icon: https://iili.io/Kfpheg2.png
+    hidden: true
+- auto_test:
+    name: 也门节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇾🇪|也门|YEM|YE
+    hidden: true
+- select:
+    name: TK
+    policies:
+    - AiTk节点
+    flatten: false
+    hidden: true
+- select:
+    name: X
+    policies:
+    - iBL3ND
+    flatten: false
+    hidden: true
+- select:
+    name: Ai
+    policies:
+    - AiTk节点
     flatten: false
     hidden: true
 - select:
     name: TG
     policies:
-    - PROXY
+    - iBL3ND
     flatten: false
     hidden: true
 - select:
-    name: Instagram
+    name: IG
     policies:
-    - PROXY
+    - iBL3ND
     flatten: false
     hidden: true
 - select:
-    name: TikTok
+    name: YouTube
     policies:
-    - PROXY
+    - iBL3ND
     flatten: false
     hidden: true
 rules:
 - rule_set:
+    match: https://johnshall.github.io/Shadowrocket-ADBlock-Rules-Forever/sr_ad_only.conf
+    policy: REJECT-NO-DROP
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/rule/rejectAd.list
+    policy: REJECT-NO-DROP
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/Uber-Eins/NetConfig/refs/heads/main/Rules/Advertising.list
+    policy: REJECT-NO-DROP
+    disabled: false
+- rule_set:
+    match: https://yfamilys.com/rule/DouYin.list
+    policy: DIRECT
+    disabled: false
+- rule_set:
+    match: https://yfamilys.com/rule/TikTok.list
+    policy: TK
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/IBL3ND/rule/refs/heads/main/Gemini.list
+    policy: Ai
+    disabled: false
+- rule_set:
+    match: https://kelee.one/Tool/Loon/Lsr/AI.lsr
+    policy: Ai
+    disabled: false
+- rule_set:
+    match: https://whatshub.top/rule/Gemini.list
+    policy: Ai
+    disabled: false
+- rule_set:
+    match: https://www.naiixi.com/Extra_Crypto.list
+    policy: Ai
+    disabled: false
+- rule_set:
+    match: https://whatshub.top/rule/OpenAI.list
+    policy: Ai
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/rule/openai.list
+    policy: Ai
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list
+    policy: Ai
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OpenAI/OpenAI.list
+    policy: Ai
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Crypto/Crypto.list
+    policy: Ai
+    disabled: false
+- rule_set:
     match: https://whatshub.top/rule/Binance.list
-    policy: PROXY
+    policy: Ai
+    disabled: false
+- rule_set:
+    match: https://yfamilys.com/rule/Twitter.list
+    policy: X
     disabled: false
 - rule_set:
     match: https://yfamilys.com/rule/Telegram.list
     policy: TG
-    disabled: false
-- rule_set:
-    match: https://yfamilys.com/rule/TikTok.list
-    policy: TikTok
     disabled: false
 - rule_set:
     match: https://yfamilys.com/rule/YouTube.list
@@ -139,19 +1882,19 @@ rules:
     disabled: false
 - rule_set:
     match: https://yfamilys.com/rule/Instagram.list
-    policy: Instagram
+    policy: IG
     disabled: false
 - rule_set:
     match: https://yfamilys.com/rule/ProxyMedia.list
-    policy: PROXY
+    policy: iBL3ND
     disabled: false
 - rule_set:
     match: https://yfamilys.com/rule/Cloudflare.list
-    policy: PROXY
+    policy: iBL3ND
     disabled: false
 - rule_set:
     match: https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_proxy_list.module
-    policy: PROXY
+    policy: iBL3ND
     disabled: false
 - rule_set:
     match: https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/direct.txt
@@ -167,12 +1910,14 @@ rules:
     policy: DIRECT
     disabled: false
 - default:
-    policy: PROXY
+    policy: iBL3ND
 scriptings:
 - schedule:
     name: TestFlight监控
     cron: '* * * * * ?'
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/TestFlight.js
+    env:
+      TF: PpJMnnTY
     timeout: 120
     disabled: true
 - generic:
@@ -202,14 +1947,27 @@ scriptings:
     name: 彩票开奖小组件
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Lottery-Widget.JS
 - generic:
+    name: 网络诊断雷达小组件
+    script_url: https://raw.githubusercontent.com/xcgtb/Egern-Widgets/main/Network-Pro.js
+- generic:
+    name: ip数据中心小组件
+    script_url: https://raw.githubusercontent.com/shadowlynx319/Egern/main/ip-dch.js
+- generic:
+    name: 每日限免小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/App_Store_Widget.JS
+- generic:
     name: '测试网络下载速度小组件 '
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/NetSpeed_Widget.JS
 mitm:
   ca_p12: egern.p12
   ca_passphrase: egern
 widgets:
+- name: 和风天气
+  script_name: 和风天气小组件
 - name: 测试网络下载速度
   script_name: '测试网络下载速度小组件 '
+- name: 机场订阅
+  script_name: 机场订阅小组件
 - name: 虚拟货币
   script_name: 虚拟货币小组件
 - name: 油价查询
@@ -222,8 +1980,16 @@ widgets:
   script_name: 万年历小组件
 - name: 聚合热搜
   script_name: 聚合热搜小组件
+- name: 每日限免
+  script_name: 每日限免小组件
+- name: IP数据中心
+  script_name: ip数据中心小组件
+- name: 网络诊断雷达
+  script_name: 网络诊断雷达小组件
 modules:
-- url: https://yfamilys.com/module/adultraplus.sgmodule
+- url: https://raw.githubusercontent.com/thNylHx/Tools/refs/heads/main/Surge/Module/Blockads.sgmodule
+  enabled: true
+- url: https://kelee.one/Tool/Loon/Lpx/RedPaper_remove_ads.lpx
   enabled: true
 - url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Telegram.yaml
   env:
@@ -235,13 +2001,14 @@ modules:
   compat_arguments:
     Type: Translate
   enabled: true
+- url: https://reven.lovebabyforever.workers.dev/reven/iTunes.sgmodule
+  enabled: true
 - name: Revenuecat-系列解锁合集
   url: http://script.hub/file/_start_/https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js/_end_/Reheji.sgmodule?type=qx-rewrite&target=surge-module&del=true&jqEnabled=true
   enabled: true
-- name: iTunes-系列解锁合集
-  url: http://script.hub/file/_start_/https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js/_end_/iTunes.sgmodule?type=qx-rewrite&target=surge-module&del=true&jqEnabled=true
-  enabled: true
 - url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/surge-loon-to-egern.yaml
+  enabled: true
+- url: https://ddgksf2013.top/module/ScriptHub.Egern.sgmodule
   enabled: true
 - url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E2%AD%90%EF%B8%8F%20BoxJs.official.sgmodule
   enabled: true
