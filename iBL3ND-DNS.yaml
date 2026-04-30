@@ -78,10 +78,6 @@ dns:
       value: 国外dns
       disabled: false
   - proxy_rule_set:
-      match: https://yfamilys.com/rule/Twitter.list
-      value: 国外dns
-      disabled: false
-  - proxy_rule_set:
       match: https://yfamilys.com/rule/YouTube.list
       value: 国外dns
       disabled: false
