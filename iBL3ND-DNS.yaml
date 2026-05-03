@@ -121,6 +121,11 @@ dns:
       match: '*'
       value: 兜底dns
       disabled: false
+  proxy_nameservers:
+  - https://doh.pub/dns-query
+  - https://dns.alidns.com/dns-query
+  - https://cloudflare-dns.com/dns-query
+  - https://dns.google/dns-query
 policy_groups:
 - select:
     name: iBL3ND
