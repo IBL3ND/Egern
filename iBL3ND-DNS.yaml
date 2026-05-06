@@ -423,7 +423,7 @@ policy_groups:
     tolerance: 0
     icon: https://iili.io/FaA7mPV.png
     hidden: true
-- auto_test:
+- smart:
     name: 泰国节点
     policies:
     - 手动选择
@@ -433,7 +433,7 @@ policy_groups:
     tolerance: 0
     icon: https://iili.io/FaA5hmb.png
     hidden: true
-- auto_test:
+- smart:
     name: 印度节点
     policies:
     - 手动选择
@@ -443,7 +443,7 @@ policy_groups:
     tolerance: 0
     icon: https://iili.io/FaARol9.png
     hidden: true
-- auto_test:
+- smart:
     name: 越南节点
     policies:
     - 手动选择
@@ -453,7 +453,7 @@ policy_groups:
     tolerance: 0
     icon: https://iili.io/FaTC2yP.png
     hidden: true
-- auto_test:
+- smart:
     name: 专线节点
     policies:
     - 手动选择
@@ -461,7 +461,7 @@ policy_groups:
     filter: IEPL|IPLC|BGP
     icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/Twoandz9/Fast.png
     hidden: true
-- auto_test:
+- smart:
     name: 澳门节点
     policies:
     - 手动选择
@@ -470,896 +470,896 @@ policy_groups:
     interval: 60
     tolerance: 0
     hidden: true
-- auto_test:
+- smart:
     name: 荷兰节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇳🇱|荷兰|NLD|NL
     hidden: true
-- auto_test:
+- smart:
     name: 阿根廷节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇦🇷|阿根廷|ARG|AR
     hidden: true
-- auto_test:
+- smart:
     name: 阿尔及利亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇩🇿|阿尔及利亚|DZA|DZ
     hidden: true
-- auto_test:
+- smart:
     name: 安哥拉节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇦🇴|安哥拉|AGO|AO
     hidden: true
-- auto_test:
+- smart:
     name: 安提瓜和巴布达节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇦🇬|安提瓜和巴布达|ATG|AG
     hidden: true
-- auto_test:
+- smart:
     name: 巴巴多斯节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇧🇧|巴巴多斯|BRB|BB
     hidden: true
-- auto_test:
+- smart:
     name: 纳米比亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇳🇦|纳米比亚|NAM|NA
     hidden: true
-- auto_test:
+- smart:
     name: 瑙鲁节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇳🇷|瑙鲁|NRU|NR
     hidden: true
-- auto_test:
+- smart:
     name: 新西兰节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇳🇿|新西兰|NZL|NZ
     hidden: true
-- auto_test:
+- smart:
     name: 尼加拉瓜节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇳🇮|尼加拉瓜|NIC|NI
     hidden: true
-- auto_test:
+- smart:
     name: 尼日尔节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇳🇪|尼日尔|NER|NE
     hidden: true
-- auto_test:
+- smart:
     name: 巴勒斯坦节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇵🇸|巴勒斯坦|Palestine|PSE|PS
     hidden: true
-- auto_test:
+- smart:
     name: 尼日利亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇳🇬|尼日利亚|NGA|NG
     hidden: true
-- auto_test:
+- smart:
     name: 朝鲜节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇰🇵|朝鲜|PRK|KP
     hidden: true
-- auto_test:
+- smart:
     name: 澳大利亚
     policies:
     - 手动选择
     flatten: true
     filter: 🇦🇺|澳大利亚|Australia|AUS|AU
     hidden: true
-- auto_test:
+- smart:
     name: 伯利兹节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇧🇿|伯利兹|Belize|BZ
     hidden: true
-- auto_test:
+- smart:
     name: 巴劳节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇵🇼|巴劳|PLW|PW
     hidden: true
-- auto_test:
+- smart:
     name: 巴拿马节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇵🇦|巴拿马|PAN|PA
     hidden: true
-- auto_test:
+- smart:
     name: 秘鲁节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇵🇪|秘鲁|PER|PE
     hidden: true
-- auto_test:
+- smart:
     name: 摩洛哥
     policies:
     - 手动选择
     flatten: true
     filter: 🇲🇦|摩洛哥|MAR|MA
     hidden: true
-- auto_test:
+- smart:
     name: 卢旺达节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇷🇼|卢旺达|RWA|RW
     hidden: true
-- auto_test:
+- smart:
     name: 圣基茨和尼维斯节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇰🇳|圣基茨和尼维斯|KNA|KN
     hidden: true
-- auto_test:
+- smart:
     name: 圣卢西亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇱🇨|圣卢西亚|LCA|LC
     hidden: true
-- auto_test:
+- smart:
     name: 圣文森特和格林纳丁斯节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇻🇨|圣文森特和格林纳丁斯|VCT|VC
     hidden: true
-- auto_test:
+- smart:
     name: 萨摩亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇼🇸|萨摩亚|WSM|WS
     hidden: true
-- auto_test:
+- smart:
     name: 圣多美和普林西比节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇸🇹|圣多美和普林西比|STP|ST
     hidden: true
-- auto_test:
+- smart:
     name: 塞内加尔节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇸🇳|塞内加尔|SEN|SN
     hidden: true
-- auto_test:
+- smart:
     name: 塞舌尔节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇸🇨|塞舌尔|SYC|SC
     hidden: true
-- auto_test:
+- smart:
     name: 塞拉利昂节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇸🇱|塞拉利昂|SLE|SL
     hidden: true
-- auto_test:
+- smart:
     name: 巴布亚新几内亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇵🇬|巴布亚新几内亚|PNG|PG
     hidden: true
-- auto_test:
+- smart:
     name: 巴哈马节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇧🇸|巴哈马|BHS|BS
     hidden: true
-- auto_test:
+- smart:
     name: 巴拉圭节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇵🇾|巴拉圭|PRY|PY
     hidden: true
-- auto_test:
+- smart:
     name: 贝宁节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇧🇯|贝宁|BEN|BJ
     hidden: true
-- auto_test:
+- smart:
     name: 博茨瓦纳节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇧🇼|博茨瓦纳|BWA|BW
     hidden: true
-- auto_test:
+- smart:
     name: 巴西节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇧🇷|巴西|BRA|BR
     hidden: true
-- auto_test:
+- smart:
     name: 莱索托节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇱🇸|莱索托|LSO|LS
     hidden: true
-- auto_test:
+- smart:
     name: 利比里亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇱🇷|利比里亚|LBR|LR
     hidden: true
-- auto_test:
+- smart:
     name: 利比亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇱🇾|利比亚|LBY|LY
     hidden: true
-- auto_test:
+- smart:
     name: 马达加斯加节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇲🇬|马达加斯加|MDG|MG
     hidden: true
-- auto_test:
+- smart:
     name: 马拉维节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇲🇼|马拉维|MWI|MW
     hidden: true
-- auto_test:
+- smart:
     name: 马里节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇲🇱|马里|MLI|ML
     hidden: true
-- auto_test:
+- smart:
     name: 毛里塔尼亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇲🇷|毛里塔尼亚|MRT|MR
     hidden: true
-- auto_test:
+- smart:
     name: 毛里求斯节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇲🇺|毛里求斯|MUS|MU
     hidden: true
-- auto_test:
+- smart:
     name: 墨西哥节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇲🇽|墨西哥|MEX|MX
     hidden: true
-- auto_test:
+- smart:
     name: 密克罗尼西亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇫🇲|密克罗尼西亚|FSM|FM
     hidden: true
-- auto_test:
+- smart:
     name: 莫桑比克节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇲🇿|莫桑比克|MOZ|MZ
     hidden: true
-- auto_test:
+- smart:
     name: 布基纳法索节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇧🇫|布基纳法索|BFA|BF
     hidden: true
-- auto_test:
+- smart:
     name: 布隆迪节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇧🇮|布隆迪|BDI|BI
     hidden: true
-- auto_test:
+- smart:
     name: 佛得角节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇨🇻|佛得角|CPV|CV
     hidden: true
-- auto_test:
+- smart:
     name: 喀麦隆节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇨🇲|喀麦隆|CMR|CM
     hidden: true
-- auto_test:
+- smart:
     name: 加拿大节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇨🇦|加拿大|CAN|CA
     hidden: true
-- auto_test:
+- smart:
     name: 中央非洲共和国节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇨🇫|中央非洲共和国|CAF|CF
     hidden: true
-- auto_test:
+- smart:
     name: 乍得节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇹🇩|乍得|TCD|TD
     hidden: true
-- auto_test:
+- smart:
     name: 智利节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇨🇱|智利|CHL|CL
     hidden: true
-- auto_test:
+- smart:
     name: 科摩罗节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇰🇲|科摩罗|COM|KM
     hidden: true
-- auto_test:
+- smart:
     name: 刚果共和国节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇨🇬|刚果共和国|COG|CG
     hidden: true
-- auto_test:
+- smart:
     name: 刚果民主共和国节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇨🇩|刚果民主共和国|COD|CD
     hidden: true
-- auto_test:
+- smart:
     name: 北马其顿节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇲🇰|北马其顿|MKD|MK
     hidden: true
-- auto_test:
+- smart:
     name: 哥斯达黎加节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇨🇷|哥斯达黎加|CRI|CR
     hidden: true
-- auto_test:
+- smart:
     name: 科特迪瓦节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇨🇮|科特迪瓦|CIV|CI
     hidden: true
-- auto_test:
+- smart:
     name: 古巴节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇨🇺|古巴|CUB|CU
     hidden: true
-- auto_test:
+- smart:
     name: 吉布提节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇩🇯|吉布提|DJI|DJ
     hidden: true
-- auto_test:
+- smart:
     name: 多米尼克节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇩🇲|多米尼克|DMA|DM
     hidden: true
-- auto_test:
+- smart:
     name: 多米尼加共和国节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇩🇴|多米尼加共和国|DOM|DO
     hidden: true
-- auto_test:
+- smart:
     name: 厄瓜多尔节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇪🇨|厄瓜多尔|ECU|EC
     hidden: true
-- auto_test:
+- smart:
     name: 埃及节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇪🇬|埃及|EGY|EG
     hidden: true
-- auto_test:
+- smart:
     name: 萨尔瓦多节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇸🇻|萨尔瓦多|SLV|SV
     hidden: true
-- auto_test:
+- smart:
     name: 赤道几内亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇬🇶|赤道几内亚|GNQ|GQ
     hidden: true
-- auto_test:
+- smart:
     name: 厄立特里亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇪🇷|厄立特里亚|ERI|ER
     hidden: true
-- auto_test:
+- smart:
     name: 埃塞俄比亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇪🇹|埃塞俄比亚|ETH|ET
     hidden: true
-- auto_test:
+- smart:
     name: 斐济节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇫🇯|斐济|FJI|FJ
     hidden: true
-- auto_test:
+- smart:
     name: 加蓬节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇬🇦|加蓬|GAB|GA
     hidden: true
-- auto_test:
+- smart:
     name: 冈比亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇬🇲|冈比亚|GMB|GM
     hidden: true
-- auto_test:
+- smart:
     name: 加纳节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇬🇭|加纳|GHA|GH
     hidden: true
-- auto_test:
+- smart:
     name: 格林纳达节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇬🇩|格林纳达|GRD|GD
     hidden: true
-- auto_test:
+- smart:
     name: 危地马拉节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇬🇹|危地马拉|GTM|GT
     hidden: true
-- auto_test:
+- smart:
     name: 几内亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇬🇳|几内亚|GIN|GN
     hidden: true
-- auto_test:
+- smart:
     name: 几内亚比绍节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇬🇼|几内亚比绍|GNB|GW
     hidden: true
-- auto_test:
+- smart:
     name: 圭亚那节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇬🇾|圭亚那|GUY|GY
     hidden: true
-- auto_test:
+- smart:
     name: 海地节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇭🇹|海地|HTI|HT
     hidden: true
-- auto_test:
+- smart:
     name: 洪都拉斯节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇭🇳|洪都拉斯|HND|HN
     hidden: true
-- auto_test:
+- smart:
     name: 牙买加节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇯🇲|牙买加|JAM|JM
     hidden: true
-- auto_test:
+- smart:
     name: 肯尼亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇰🇪|肯尼亚|KEN|KE
     hidden: true
-- auto_test:
+- smart:
     name: 基里巴斯节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇰🇮|基里巴斯|KIR|KI
     hidden: true
-- auto_test:
+- smart:
     name: 科索沃节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇽🇰|科索沃|XKX|XK
     hidden: true
-- auto_test:
+- smart:
     name: 挪威节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇳🇴|挪威|NOR|NO
     hidden: true
-- auto_test:
+- smart:
     name: 波兰节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇵🇱|波兰|POL|PL
     hidden: true
-- auto_test:
+- smart:
     name: 葡萄牙节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇵🇹|葡萄牙|PRT|PT
     hidden: true
-- auto_test:
+- smart:
     name: 罗马尼亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇷🇴|罗马尼亚|ROU|RO
     hidden: true
-- auto_test:
+- smart:
     name: 俄罗斯节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇷🇺|俄罗斯|RUS|RU
     hidden: true
-- auto_test:
+- smart:
     name: 圣马力诺节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇸🇲|圣马力诺|SMR|SM
     hidden: true
-- auto_test:
+- smart:
     name: 塞尔维亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇷🇸|塞尔维亚|SRB|RS
     hidden: true
-- auto_test:
+- smart:
     name: 斯洛伐克节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇸🇰|斯洛伐克|SVK|SK
     hidden: true
-- auto_test:
+- smart:
     name: 斯洛文尼亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇸🇮|斯洛文尼亚|SVN|SI
     hidden: true
-- auto_test:
+- smart:
     name: 西班牙节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇪🇸|西班牙|ESP|ES
     hidden: true
-- auto_test:
+- smart:
     name: 瑞典节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇸🇪|瑞典|SWE|SE
     hidden: true
-- auto_test:
+- smart:
     name: 瑞士节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇨🇭|瑞士|CHE|CH
     hidden: true
-- auto_test:
+- smart:
     name: 乌克兰节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇺🇦|乌克兰|UKR|UA
     hidden: true
-- auto_test:
+- smart:
     name: 英国节点
     policies:
     - 手动选择
     flatten: true
     filter: ^(?!.*剩余流量).*?(?:🇬🇧|英国|GBR|GB|EN)
     hidden: true
-- auto_test:
+- smart:
     name: 阿尔巴尼亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇦🇱|阿尔巴尼亚|ALB|AL
     hidden: true
-- auto_test:
+- smart:
     name: 安道尔节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇦🇩|安道尔|AND|AD
     hidden: true
-- auto_test:
+- smart:
     name: 奥地利节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇦🇹|奥地利|AUT|AT
     hidden: true
-- auto_test:
+- smart:
     name: 所罗门群岛节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇸🇧|所罗门群岛|SLB|SB
     hidden: true
-- auto_test:
+- smart:
     name: 索马里节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇸🇴|索马里|SOM|SO
     hidden: true
-- auto_test:
+- smart:
     name: 南非节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇿🇦|南非|ZAF|ZA
     hidden: true
-- auto_test:
+- smart:
     name: 南苏丹节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇸🇸|南苏丹|SSD|SS
     hidden: true
-- auto_test:
+- smart:
     name: 苏丹节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇸🇩|苏丹|SDN|SD
     hidden: true
-- auto_test:
+- smart:
     name: 苏里南节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇸🇷|苏里南|SUR|SR
     hidden: true
-- auto_test:
+- smart:
     name: 斯威士兰节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇸🇿|斯威士兰|SWZ|SZ
     hidden: true
-- auto_test:
+- smart:
     name: 坦桑尼亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇹🇿|坦桑尼亚|TZA|TZ
     hidden: true
-- auto_test:
+- smart:
     name: 多哥节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇹🇬|多哥|TGO|TG
     hidden: true
-- auto_test:
+- smart:
     name: 汤加节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇹🇴|汤加|TON|TO
     hidden: true
-- auto_test:
+- smart:
     name: 特立尼达和多巴哥节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇹🇹|特立尼达和多巴哥|TTO|TT
     hidden: true
-- auto_test:
+- smart:
     name: 突尼斯节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇹🇳|突尼斯|TUN|TN
     hidden: true
-- auto_test:
+- smart:
     name: 图瓦卢节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇹🇻|图瓦卢|TUV|TV
     hidden: true
-- auto_test:
+- smart:
     name: 乌干达节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇺🇬|乌干达|UGA|UG
     hidden: true
-- auto_test:
+- smart:
     name: 乌拉圭节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇺🇾|乌拉圭|URY|UY
     hidden: true
-- auto_test:
+- smart:
     name: 瓦努阿图节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇻🇺|瓦努阿图|VUT|VU
     hidden: true
-- auto_test:
+- smart:
     name: 梵蒂冈城节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇻🇦|梵蒂冈|VAT|VA
     hidden: true
-- auto_test:
+- smart:
     name: 委内瑞拉节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇻🇪|委内瑞拉|VEN|VE
     hidden: true
-- auto_test:
+- smart:
     name: 赞比亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇿🇲|赞比亚|ZMB|ZM
     hidden: true
-- auto_test:
+- smart:
     name: 津巴布韦节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇿🇼|津巴布韦|ZWE|ZW
     hidden: true
-- auto_test:
+- smart:
     name: 白俄罗斯节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇧🇾|白俄罗斯|BLR|BY
     hidden: true
-- auto_test:
+- smart:
     name: 比利时节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇧🇪|比利时|BEL|BE
     hidden: true
-- auto_test:
+- smart:
     name: 波黑节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇧🇦|波黑|波斯尼亚|波斯尼亜|波斯尼亚和黑塞哥维那|BIH|BA
     hidden: true
-- auto_test:
+- smart:
     name: 保加利亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇧🇬|保加利亚|BGR|BG
     hidden: true
-- auto_test:
+- smart:
     name: 克罗地亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇭🇷|克罗地亚|HRV|HR
     hidden: true
-- auto_test:
+- smart:
     name: 塞浦路斯节点
     policies:
     - 手动选择
@@ -1367,147 +1367,147 @@ policy_groups:
     filter: 🇨🇾|塞浦路斯|CYP|CY
     icon: https://iili.io/Kq9uM5Q.png
     hidden: true
-- auto_test:
+- smart:
     name: 捷克节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇨🇿|捷克|CZE|CZ
     hidden: true
-- auto_test:
+- smart:
     name: 丹麦节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇩🇰|丹麦|DNK|DK
     hidden: true
-- auto_test:
+- smart:
     name: 爱沙尼亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇪🇪|爱沙尼亚|EST|EE
     hidden: true
-- auto_test:
+- smart:
     name: 芬兰节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇫🇮|芬兰|FIN|FI
     hidden: true
-- auto_test:
+- smart:
     name: 法国节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇫🇷|法国|FRA|FR
     hidden: true
-- auto_test:
+- smart:
     name: 德国节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇩🇪|德国|DEU|DE
     hidden: true
-- auto_test:
+- smart:
     name: 希腊节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇬🇷|希腊|GRC|GR
     hidden: true
-- auto_test:
+- smart:
     name: 匈牙利节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇭🇺|匈牙利|HUN|HU
     hidden: true
-- auto_test:
+- smart:
     name: 冰岛节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇮🇸|冰岛|ISL|IS
     hidden: true
-- auto_test:
+- smart:
     name: 爱尔兰节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇮🇪|爱尔兰|IRL|IE
     hidden: true
-- auto_test:
+- smart:
     name: 意大利节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇮🇹|意大利|ITA|IT
     hidden: true
-- auto_test:
+- smart:
     name: 拉脱维亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇱🇻|拉脱维亚|LVA|LV
     hidden: true
-- auto_test:
+- smart:
     name: 列支敦士登节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇱🇮|列支敦士登|LIE|LI
     hidden: true
-- auto_test:
+- smart:
     name: 立陶宛节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇱🇹|立陶宛|LTU|LT
     hidden: true
-- auto_test:
+- smart:
     name: 卢森堡节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇱🇺|卢森堡|LUX|LU
     hidden: true
-- auto_test:
+- smart:
     name: 马耳他节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇲🇹|马耳他|MLT|MT
     hidden: true
-- auto_test:
+- smart:
     name: 摩尔多瓦节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇲🇩|摩尔多瓦|MDA|MD
     hidden: true
-- auto_test:
+- smart:
     name: 摩纳哥节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇲🇨|摩纳哥|MCO|MC
     hidden: true
-- auto_test:
+- smart:
     name: 黑山节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇲🇪|黑山|MNE|ME
     hidden: true
-- auto_test:
+- smart:
     name: 东帝汶节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇹🇱|东帝汶|TLS|TL
     hidden: true
-- auto_test:
+- smart:
     name: 亚美尼亚节点
     policies:
     - 手动选择
@@ -1515,7 +1515,7 @@ policy_groups:
     filter: 🇦🇲|亚美尼亚|ARM|AM
     icon: https://iili.io/KfpSO1n.png
     hidden: true
-- auto_test:
+- smart:
     name: 阿塞拜疆节点
     policies:
     - 手动选择
@@ -1523,7 +1523,7 @@ policy_groups:
     filter: 🇦🇿|阿塞拜疆|AZE|AZ
     icon: https://iili.io/KfpQF3B.png
     hidden: true
-- auto_test:
+- smart:
     name: 格鲁吉亚节点
     policies:
     - 手动选择
@@ -1531,7 +1531,7 @@ policy_groups:
     filter: 🇬🇪|格鲁吉亚|GEO|GE
     icon: https://iili.io/Kq9G1rN.png
     hidden: true
-- auto_test:
+- smart:
     name: 马尔代夫节点
     policies:
     - 手动选择
@@ -1539,7 +1539,7 @@ policy_groups:
     filter: 🇲🇻|马尔代夫|MDV|MV
     icon: https://iili.io/KqdJbEB.png
     hidden: true
-- auto_test:
+- smart:
     name: 不丹节点
     policies:
     - 手动选择
@@ -1547,21 +1547,21 @@ policy_groups:
     filter: 🇧🇹|不丹|BTN|BT
     icon: https://iili.io/Kfy6Ehv.png
     hidden: true
-- auto_test:
+- smart:
     name: 塔吉克斯坦节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇹🇯|塔吉克斯坦|TJK|TJ
     hidden: true
-- auto_test:
+- smart:
     name: 土库曼斯坦节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇹🇲|土库曼斯坦|TKM|TM
     hidden: true
-- auto_test:
+- smart:
     name: 吉尔吉斯斯坦节点
     policies:
     - 手动选择
@@ -1569,14 +1569,14 @@ policy_groups:
     filter: 🇰🇬|吉尔吉斯斯坦|KGZ|KG
     icon: https://iili.io/KqJg1V4.png
     hidden: true
-- auto_test:
+- smart:
     name: 菲律宾节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇵🇭|菲律宾|PHL|PH
     hidden: true
-- auto_test:
+- smart:
     name: 印度尼西亚节点
     policies:
     - 手动选择
@@ -1584,7 +1584,7 @@ policy_groups:
     filter: 🇮🇩|印度尼西亚|IDN|ID
     icon: https://iili.io/Kq9rghx.png
     hidden: true
-- auto_test:
+- smart:
     name: 柬埔寨节点
     policies:
     - 手动选择
@@ -1592,14 +1592,14 @@ policy_groups:
     filter: 🇰🇭|柬埔寨|KHM|KH
     icon: https://iili.io/Kq9dVOx.png
     hidden: true
-- auto_test:
+- smart:
     name: 缅甸节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇲🇲|缅甸|MMR|MM
     hidden: true
-- auto_test:
+- smart:
     name: 老挝节点
     policies:
     - 手动选择
@@ -1607,21 +1607,21 @@ policy_groups:
     filter: 🇱🇦|老挝|LAO|LA
     icon: https://iili.io/KqJLDj1.png
     hidden: true
-- auto_test:
+- smart:
     name: 尼泊尔节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇳🇵|尼泊尔|NPL|NP
     hidden: true
-- auto_test:
+- smart:
     name: 巴基斯坦节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇵🇰|巴基斯坦|PAK|PK
     hidden: true
-- auto_test:
+- smart:
     name: 孟加拉节点
     policies:
     - 手动选择
@@ -1629,14 +1629,14 @@ policy_groups:
     filter: 🇧🇩|孟加拉|BGD|BD
     icon: https://iili.io/KfyvTla.png
     hidden: true
-- auto_test:
+- smart:
     name: 斯里兰卡节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇱🇰|斯里兰卡|LKA|LK
     hidden: true
-- auto_test:
+- smart:
     name: 蒙古节点
     policies:
     - 手动选择
@@ -1644,7 +1644,7 @@ policy_groups:
     filter: 🇲🇳|蒙古|MNG|MN
     icon: https://iili.io/Kqdo9Ps.png
     hidden: true
-- auto_test:
+- smart:
     name: 哈萨克斯坦节点
     policies:
     - 手动选择
@@ -1652,21 +1652,21 @@ policy_groups:
     filter: 🇰🇿|哈萨克斯坦|KAZ|KZ
     icon: https://iili.io/KqJXxne.png
     hidden: true
-- auto_test:
+- smart:
     name: 乌兹别克斯坦节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇺🇿|乌兹别克斯坦|UZB|UZ
     hidden: true
-- auto_test:
+- smart:
     name: 土耳其节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇹🇷|土耳其|TUR|TR
     hidden: true
-- auto_test:
+- smart:
     name: 伊朗节点
     policies:
     - 手动选择
@@ -1674,7 +1674,7 @@ policy_groups:
     filter: 🇮🇷|伊朗|IRN|IR
     icon: https://iili.io/KqJqTOX.png
     hidden: true
-- auto_test:
+- smart:
     name: 以色列节点
     policies:
     - 手动选择
@@ -1682,28 +1682,28 @@ policy_groups:
     filter: 🇮🇱|以色列|ISR|IL
     icon: https://iili.io/KqJ57LB.png
     hidden: true
-- auto_test:
+- smart:
     name: 阿联酋节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇦🇪|阿联酋|ARE|AE
     hidden: true
-- auto_test:
+- smart:
     name: 沙特阿拉伯节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇸🇦|沙特阿拉伯|SAU|SA
     hidden: true
-- auto_test:
+- smart:
     name: 卡塔尔节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇶🇦|卡塔尔|QAT|QA
     hidden: true
-- auto_test:
+- smart:
     name: 科威特节点
     policies:
     - 手动选择
@@ -1711,14 +1711,14 @@ policy_groups:
     filter: 🇰🇼|科威特|KWT|KW
     icon: https://iili.io/KqJeUle.png
     hidden: true
-- auto_test:
+- smart:
     name: 阿曼节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇴🇲|阿曼|OMN|OM
     hidden: true
-- auto_test:
+- smart:
     name: 巴林节点
     policies:
     - 手动选择
@@ -1726,7 +1726,7 @@ policy_groups:
     filter: 🇧🇭|巴林|BHR|BH
     icon: https://iili.io/KfyMikF.png
     hidden: true
-- auto_test:
+- smart:
     name: 约旦节点
     policies:
     - 手动选择
@@ -1734,7 +1734,7 @@ policy_groups:
     filter: 🇯🇴|约旦|JOR|JO
     icon: https://iili.io/KqJ0pja.png
     hidden: true
-- auto_test:
+- smart:
     name: 黎巴嫩节点
     policies:
     - 手动选择
@@ -1742,14 +1742,14 @@ policy_groups:
     filter: 🇱🇧|黎巴嫩|LBN|LB
     icon: https://iili.io/KqJbEs1.png
     hidden: true
-- auto_test:
+- smart:
     name: 叙利亚节点
     policies:
     - 手动选择
     flatten: true
     filter: 🇸🇾|叙利亚|SYR|SY
     hidden: true
-- auto_test:
+- smart:
     name: 伊拉克节点
     policies:
     - 手动选择
@@ -1757,7 +1757,7 @@ policy_groups:
     filter: 🇮🇶|伊拉克|IRQ|IQ
     icon: https://iili.io/KqJxHw7.png
     hidden: true
-- auto_test:
+- smart:
     name: 阿富汗节点
     policies:
     - 手动选择
@@ -1765,7 +1765,7 @@ policy_groups:
     filter: 🇦🇫|阿富汗|AFG|AF
     icon: https://iili.io/Kfpheg2.png
     hidden: true
-- auto_test:
+- smart:
     name: 也门节点
     policies:
     - 手动选择
