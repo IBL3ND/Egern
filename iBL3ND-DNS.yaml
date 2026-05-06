@@ -352,7 +352,7 @@ policy_groups:
     block_quic: true
     icon: https://iili.io/K0KvJv1.png
     hidden: false
-- auto_test:
+- smart:
     name: 香港节点
     policies:
     - 手动选择
@@ -363,7 +363,7 @@ policy_groups:
     block_quic: true
     icon: https://iili.io/FaAI3Bt.png
     hidden: false
-- auto_test:
+- smart:
     name: 新国节点
     policies:
     - 手动选择
@@ -373,7 +373,7 @@ policy_groups:
     tolerance: 0
     icon: https://iili.io/FaRfFXn.png
     hidden: false
-- auto_test:
+- smart:
     name: 台湾节点
     policies:
     - 手动选择
@@ -383,7 +383,7 @@ policy_groups:
     tolerance: 0
     icon: https://iili.io/Kb9Iauj.png
     hidden: false
-- auto_test:
+- smart:
     name: 日本节点
     policies:
     - 手动选择
@@ -393,7 +393,7 @@ policy_groups:
     tolerance: 0
     icon: https://iili.io/Fa5AnTb.png
     hidden: false
-- auto_test:
+- smart:
     name: 韩国节点
     policies:
     - 手动选择
@@ -403,7 +403,7 @@ policy_groups:
     tolerance: 0
     icon: https://iili.io/Fa5Mdn1.png
     hidden: false
-- auto_test:
+- smart:
     name: 美国节点
     policies:
     - 手动选择
@@ -413,7 +413,7 @@ policy_groups:
     tolerance: 0
     icon: https://iili.io/FaAug7s.png
     hidden: false
-- auto_test:
+- smart:
     name: 马来节点
     policies:
     - 手动选择
