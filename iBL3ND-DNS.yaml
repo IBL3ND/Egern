@@ -131,6 +131,13 @@ dns:
   - https://cloudflare-dns.com/dns-query
   - https://dns.google/dns-query
 policy_groups:
+- external:
+    name: 机场订阅
+    type: select
+    urls:
+    - 这里添加进你的订阅地址
+    block_quic: true
+    hidden: true
 - select:
     name: iBL3ND
     policies:
@@ -350,7 +357,8 @@ policy_groups:
     hidden: false
 - select:
     name: 手动选择
-    policies: []
+    policies:
+    - 机场订阅
     flatten: true
     block_quic: true
     icon: https://iili.io/K0KvJv1.png
@@ -361,8 +369,6 @@ policy_groups:
     - 手动选择
     flatten: true
     filter: ^(?!.*×).*(?:🇭🇰|Hong Kong|Hong|HK|HKG|香港).*$
-    interval: 60
-    tolerance: 0
     block_quic: true
     icon: https://iili.io/FaAI3Bt.png
     hidden: false
@@ -372,8 +378,6 @@ policy_groups:
     - 手动选择
     flatten: true
     filter: 🇸🇬|新加坡|Singapore|SG
-    interval: 60
-    tolerance: 0
     icon: https://iili.io/FaRfFXn.png
     hidden: false
 - smart:
@@ -382,8 +386,6 @@ policy_groups:
     - 手动选择
     flatten: true
     filter: 🇹🇼|台湾|Taiwan|TW|Tai
-    interval: 60
-    tolerance: 0
     icon: https://iili.io/Kb9Iauj.png
     hidden: false
 - smart:
@@ -392,8 +394,6 @@ policy_groups:
     - 手动选择
     flatten: true
     filter: \b(?!.*×)\b(🇯🇵|日本|Japan|JP)\b
-    interval: 60
-    tolerance: 0
     icon: https://iili.io/Fa5AnTb.png
     hidden: false
 - smart:
@@ -402,8 +402,6 @@ policy_groups:
     - 手动选择
     flatten: true
     filter: 🇰🇷|韩国|Korea|KR
-    interval: 60
-    tolerance: 0
     icon: https://iili.io/Fa5Mdn1.png
     hidden: false
 - smart:
@@ -412,8 +410,6 @@ policy_groups:
     - 手动选择
     flatten: true
     filter: 🇺🇸|美国|United States|USA|US|States
-    interval: 60
-    tolerance: 0
     icon: https://iili.io/FaAug7s.png
     hidden: false
 - smart:
@@ -422,8 +418,6 @@ policy_groups:
     - 手动选择
     flatten: true
     filter: 🇲🇾|马来西亚|马来|Malaysia|MY|Malay
-    interval: 60
-    tolerance: 0
     icon: https://iili.io/FaA7mPV.png
     hidden: true
 - smart:
@@ -432,8 +426,6 @@ policy_groups:
     - 手动选择
     flatten: true
     filter: 🇹🇭|泰国|THA|TH
-    interval: 60
-    tolerance: 0
     icon: https://iili.io/FaA5hmb.png
     hidden: true
 - smart:
@@ -442,8 +434,6 @@ policy_groups:
     - 手动选择
     flatten: true
     filter: 🇮🇳|印度|India|IND|IN
-    interval: 60
-    tolerance: 0
     icon: https://iili.io/FaARol9.png
     hidden: true
 - smart:
@@ -452,8 +442,6 @@ policy_groups:
     - 手动选择
     flatten: true
     filter: 🇻🇳|越南|VNM|VN
-    interval: 60
-    tolerance: 0
     icon: https://iili.io/FaTC2yP.png
     hidden: true
 - smart:
@@ -470,8 +458,6 @@ policy_groups:
     - 手动选择
     flatten: true
     filter: 🇲🇴|澳门|MAC|MO
-    interval: 60
-    tolerance: 0
     hidden: true
 - smart:
     name: 荷兰节点
@@ -1813,18 +1799,6 @@ policy_groups:
     hidden: true
 rules:
 - rule_set:
-    match: https://johnshall.github.io/Shadowrocket-ADBlock-Rules-Forever/sr_ad_only.conf
-    policy: REJECT-NO-DROP
-    disabled: false
-- rule_set:
-    match: https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/rule/rejectAd.list
-    policy: REJECT-NO-DROP
-    disabled: false
-- rule_set:
-    match: https://raw.githubusercontent.com/Uber-Eins/NetConfig/refs/heads/main/Rules/Advertising.list
-    policy: REJECT-NO-DROP
-    disabled: false
-- rule_set:
     match: https://yfamilys.com/rule/DouYin.list
     policy: DIRECT
     disabled: false
@@ -1974,8 +1948,6 @@ mitm:
   ca_p12: egern.p12
   ca_passphrase: egern
 widgets:
-- name: 和风天气
-  script_name: 和风天气小组件
 - name: 测试网络下载速度
   script_name: '测试网络下载速度小组件 '
 - name: 机场订阅
@@ -1999,10 +1971,6 @@ widgets:
 - name: 网络诊断雷达
   script_name: 网络诊断雷达小组件
 modules:
-- url: https://raw.githubusercontent.com/thNylHx/Tools/refs/heads/main/Surge/Module/Blockads.sgmodule
-  enabled: true
-- url: https://kelee.one/Tool/Loon/Lpx/RedPaper_remove_ads.lpx
-  enabled: true
 - url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Telegram.yaml
   env:
     CLIENT: Telegram
