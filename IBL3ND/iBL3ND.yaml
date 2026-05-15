@@ -8,11 +8,14 @@ direct_latency_test_url: https://www.qq.com
 udp_latency_test_url: google.com@8.8.8.8
 compat_route: true
 dns:
+  bootstrap:
+  - https://223.5.5.5/dns-query
+  - https://223.6.6.6/dns-query
+  - https://doh.pub/dns-query
   upstreams:
     iBL3ND-DNS:
-    - https://doh.pub/dns-query
+    - https://1.1.1.1/dns-query
     - https://dns.google/dns-query
-    - https://dns.alidns.com/dns-query
     - https://cloudflare-dns.com/dns-query
   forward:
   - domain_wildcard:
@@ -20,8 +23,10 @@ dns:
       value: iBL3ND-DNS
       disabled: false
   proxy_nameservers:
+  - https://1.1.1.1/dns-query
   - https://doh.pub/dns-query
   - https://dns.google/dns-query
+  - https://dns.alidns.com/dns-query
 policy_groups:
 - external:
     name: 订阅
