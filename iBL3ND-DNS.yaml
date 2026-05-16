@@ -1883,14 +1883,6 @@ rules:
     policy: DIRECT
     disabled: false
 - rule_set:
-    match: https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/direct.txt
-    policy: DIRECT
-    disabled: false
-- rule_set:
-    match: https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_direct_list.module
-    policy: DIRECT
-    disabled: false
-- rule_set:
     name: 域间路由
     match: https://raw.githubusercontent.com/IBL3ND/rule/refs/heads/main/LAN.list
     policy: DIRECT
