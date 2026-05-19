@@ -1911,9 +1911,6 @@ scriptings:
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Sub_Widget.JS
     timeout: 120
 - generic:
-    name: 聚合热搜小组件
-    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/HSW_Widget.JS
-- generic:
     name: 万年历小组件
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/CN_Cal.JS
 - generic:
@@ -1935,9 +1932,6 @@ scriptings:
     name: ip数据中心小组件
     script_url: https://raw.githubusercontent.com/shadowlynx319/Egern/main/ip-dch.js
 - generic:
-    name: 每日限免小组件
-    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/App_Store_Widget.JS
-- generic:
     name: '测试网络下载速度小组件 '
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/NetSpeed_Widget.JS
 mitm:
@@ -1958,10 +1952,6 @@ widgets:
   script_name: 节日倒计时小组件
 - name: 万年历
   script_name: 万年历小组件
-- name: 聚合热搜
-  script_name: 聚合热搜小组件
-- name: 每日限免
-  script_name: 每日限免小组件
 - name: IP数据中心
   script_name: ip数据中心小组件
 - name: 网络诊断雷达
