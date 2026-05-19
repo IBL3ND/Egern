@@ -122,6 +122,10 @@ dns:
       value: 国内dns
       disabled: false
   - domain_wildcard:
+      match: '*.cn'
+      value: 国内dns
+      disabled: false
+  - domain_wildcard:
       match: '*'
       value: 兜底dns
       disabled: false
