@@ -368,7 +368,7 @@ policy_groups:
     policies:
     - 手动选择
     flatten: true
-    filter: ^(?!.*×).*(?:🇭🇰|Hong Kong|Hong|HK|HKG|香港).*$
+    filter: 🇭🇰|Hong Kong|Hong|HK|HKG|香港
     block_quic: true
     icon: https://iili.io/FaAI3Bt.png
     hidden: false
@@ -393,7 +393,7 @@ policy_groups:
     policies:
     - 手动选择
     flatten: true
-    filter: \b(?!.*×)\b(🇯🇵|日本|Japan|JP)\b
+    filter: 🇯🇵|Japan|Tokyo|JP|日本
     icon: https://iili.io/Fa5AnTb.png
     hidden: false
 - smart:
