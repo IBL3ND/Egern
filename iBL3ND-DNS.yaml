@@ -25,9 +25,6 @@ dns:
     - https://1.1.1.1/dns-query
     - https://dns.google/dns-query
     - https://cloudflare-dns.com/dns-query
-    - https://dns.nextdns.io
-    - https://dns.switch.ch/dns-query
-    - https://dns.adguard.com/dns-query
   forward:
   - proxy_rule_set:
       match: https://yfamilys.com/rule/DouYin.list
