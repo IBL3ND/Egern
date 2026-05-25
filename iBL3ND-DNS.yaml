@@ -336,6 +336,11 @@ policy_groups:
     - 委内瑞拉节点
     - 赞比亚节点
     - 津巴布韦节点
+    - 文莱节点
+    - 伯利兹节点
+    - 玻利维亚节点
+    - 哥伦比亚节点
+    - 摩洛哥节点
     flatten: false
     icon: https://iili.io/K0KrBdQ.png
     hidden: false
@@ -1755,6 +1760,41 @@ policy_groups:
     - 手动选择
     flatten: true
     filter: 🇾🇪|也门|YEM|YE
+    hidden: true
+- smart:
+    name: 文莱节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇧🇳|文莱|BRN|BN
+    hidden: true
+- smart:
+    name: 伯利兹节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇧🇿|伯利兹|BLZ|BZ
+    hidden: true
+- smart:
+    name: 玻利维亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇧🇴|玻利维亚|BOL|BO
+    hidden: true
+- smart:
+    name: 哥伦比亚节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇨🇴|哥伦比亚|COL|CO
+    hidden: true
+- smart:
+    name: 摩洛哥节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇲🇦|摩洛哥|MAR|MA
     hidden: true
 - select:
     name: TK
