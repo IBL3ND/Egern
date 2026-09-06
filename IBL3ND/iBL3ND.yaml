@@ -1,5 +1,6 @@
 allow_external_connections: true
 vif_only: true
+close_connections_on_policy_change: false
 hide_vpn_icon: false
 geoip_db_url: https://github.com/xream/geoip/releases/latest/download/ipinfo.country.mmdb
 asn_db_url: https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-ASN.mmdb
@@ -8,90 +9,97 @@ direct_latency_test_url: https://www.qq.com
 udp_latency_test_url: google.com@8.8.8.8
 compat_route: true
 dns:
- upstreams:
-   iBL3ND-DNS:
-   - https://doh.pub/dns-query
-   - https://dns.alidns.com/dns-query
-   - https://1.1.1.1/dns-query
-   - https://dns.google/dns-query
-   - https://cloudflare-dns.com/dns-query
- forward:
- - domain_wildcard:
-     match: '*'
-     value: iBL3ND-DNS
-     disabled: false
- proxy_nameservers:
- - https://1.1.1.1/dns-query
- - https://doh.pub/dns-query
- - https://dns.google/dns-query
- - https://dns.alidns.com/dns-query
+  upstreams:
+    iBL3ND-DNS:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+    - https://1.1.1.1/dns-query
+    - https://dns.google/dns-query
+    - https://cloudflare-dns.com/dns-query
+  forward:
+  - domain_wildcard:
+      match: '*'
+      value: iBL3ND-DNS
+      disabled: false
+  proxy_nameservers:
+  - https://1.1.1.1/dns-query
+  - https://doh.pub/dns-query
+  - https://dns.google/dns-query
+  - https://dns.alidns.com/dns-query
 policy_groups:
 - external:
-   name: 订阅
-   type: select
-   urls:
-   - 这里添加你的机场订阅链接
-   hidden: true
+    name: 订阅
+    type: select
+    urls:
+    - 这里添加你的机场订阅链接
+    hidden: true
 - select:
-   name: PROXY
-   policies:
-   - 订阅
-   flatten: true
-   icon: https://iili.io/fKClisn.png
-   hidden: false
+    name: PROXY
+    policies:
+    - 订阅
+    flatten: true
+    icon: https://iili.io/fKClisn.png
+    hidden: false
 rules:
 - rule_set:
-   name: ChinaMaxNoMedia
-   match: https://whatshub.top/rule/ChinaMaxNoMedia.list
-   policy: DIRECT
-   disabled: false
+    name: DIRECT
+    match: https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_direct_list.module
+    policy: DIRECT
+    disabled: false
 - rule_set:
-   name: ChinaIPs
-   match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/ChinaIPs/ChinaIPs.list
-   policy: DIRECT
-   disabled: false
+    match: https://raw.githubusercontent.com/Rabbit-Spec/Surge/refs/heads/Master/Rules/China.list
+    policy: DIRECT
+    disabled: false
 - rule_set:
-   name: China
-   match: https://whatshub.top/rule/China.list
-   policy: DIRECT
-   disabled: false
+    match: https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/direct.txt
+    policy: DIRECT
+    disabled: false
 - rule_set:
-   name: ChinaIPv6
-   match: https://ruleset.skk.moe/List/ip/china_ip_ipv6.conf
-   policy: DIRECT
-   disabled: false
+    name: ChinaIPs
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/ChinaIPs/ChinaIPs.list
+    policy: DIRECT
+    disabled: false
 - rule_set:
-   name: 域间路由
-   match: https://raw.githubusercontent.com/IBL3ND/rule/refs/heads/main/LAN.list
-   policy: DIRECT
-   disabled: false
+    match: https://raw.githubusercontent.com/Rabbit-Spec/Surge/refs/heads/Master/Rules/ChinaCIDR.list
+    policy: DIRECT
+    disabled: false
+- rule_set:
+    name: ChinaIPv6
+    match: https://ruleset.skk.moe/List/ip/china_ip_ipv6.conf
+    policy: DIRECT
+    disabled: false
+- rule_set:
+    name: 域间路由
+    match: https://raw.githubusercontent.com/IBL3ND/rule/refs/heads/main/LAN.list
+    policy: DIRECT
+    disabled: false
 - default:
-   policy: PROXY
+    policy: PROXY
 scriptings:
 - generic:
-   name: 聚合热搜小组件
-   script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/HSW_Widget.JS
+    name: 聚合热搜小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/HSW_Widget.JS
 - generic:
-   name: 财联社小组件
-   script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/CLS_Widget.JS
+    name: 财联社小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/CLS_Widget.JS
 - generic:
-   name: 万年历小组件
-   script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/CN_Cal.JS
+    name: 万年历小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/CN_Cal.JS
 - generic:
-   name: 节日倒计时小组件
-   script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Holiday_Countdown.js
+    name: 节日倒计时小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Holiday_Countdown.js
 - generic:
-   name: 油价查询小组件
-   script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Oil_Widget.JS
+    name: 油价查询小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Oil_Widget.JS
 - generic:
-   name: 虚拟货币小组件
-   script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Crypto_Widget.JS
+    name: 虚拟货币小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Crypto_Widget.JS
 - generic:
-   name: 彩票开奖小组件
-   script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Lottery-Widget.JS
+    name: 彩票开奖小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Lottery-Widget.JS
 mitm:
- ca_p12: egern.p12
- ca_passphrase: egern
+  ca_p12: egern.p12
+  ca_passphrase: egern
 widgets:
 - name: 油价查询
   script_name: 油价查询小组件
@@ -120,7 +128,7 @@ modules:
   enabled: true
 - url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E2%AD%90%EF%B8%8F%20BoxJs.official.sgmodule
   enabled: true
-- url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E2%AD%90%EF%B8%8F%20Sub-Store.official.sgmodule
+- url: https://raw.githubusercontent.com/sub-store-org/Sub-Store/refs/heads/master/config/Egern.yaml
   enabled: true
 - url: https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/refs/heads/main/modules/script-hub.beta.surge.sgmodule
   enabled: true
