@@ -39,11 +39,11 @@ dns:
       value: 国外dns
       disabled: false
   - proxy_rule_set:
-      match: https://whatshub.top/rule/Gemini.list
+      match: https://yfamilys.com/rule/Gemini.list
       value: 国外dns
       disabled: false
   - proxy_rule_set:
-      match: https://whatshub.top/rule/OpenAI.list
+      match: https://yfamilys.com/rule/OpenAI.list
       value: 国外dns
       disabled: false
   - proxy_rule_set:
@@ -67,7 +67,7 @@ dns:
       value: 国外dns
       disabled: false
   - proxy_rule_set:
-      match: https://whatshub.top/rule/Binance.list
+      match: https://yfamilys.com/rule/Binance.list
       value: 国外dns
       disabled: false
   - proxy_rule_set:
@@ -1850,7 +1850,7 @@ rules:
     policy: Ai
     disabled: false
 - rule_set:
-    match: https://whatshub.top/rule/Gemini.list
+    match: https://yfamilys.com/rule/Gemini.list
     policy: Ai
     disabled: false
 - rule_set:
@@ -1858,7 +1858,7 @@ rules:
     policy: Ai
     disabled: false
 - rule_set:
-    match: https://whatshub.top/rule/OpenAI.list
+    match: https://yfamilys.com/rule/OpenAI.list
     policy: Ai
     disabled: false
 - rule_set:
@@ -1878,7 +1878,7 @@ rules:
     policy: Ai
     disabled: false
 - rule_set:
-    match: https://whatshub.top/rule/Binance.list
+    match: https://yfamilys.com/rule/Binance.list
     policy: Ai
     disabled: false
 - rule_set:
