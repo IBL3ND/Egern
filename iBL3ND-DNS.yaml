@@ -1,152 +1,140 @@
-ipv6: false
+ipv6: true
 allow_external_connections: true
 vif_only: true
 block_quic: true
+close_connections_on_policy_change: true
 hide_vpn_icon: false
-geoip_db_url: https://github.com/xream/geoip/releases/latest/download/ipinfo.country.mmdb
-asn_db_url: https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-ASN.mmdb
-proxy_latency_test_url: https://connectivitycheck.gstatic.com/generate_204
-direct_latency_test_url: https://www.qq.com
+geoip_db_url: https://git.io/GeoLite2-City.mmdb
+asn_db_url: https://git.io/GeoLite2-ASN.mmdb
+proxy_latency_test_url: http://connectivitycheck.gstatic.com/generate_204
+direct_latency_test_url: http://www.qq.com
 udp_latency_test_url: google.com@8.8.8.8
 compat_route: true
+include_all_networks: false
+include_apns: false
 dns:
+  bootstrap:
+  - system
+  - 223.5.5.5
+  - 223.6.6.6
+  - 119.28.28.28
+  - 119.29.29.29
+  - 180.76.76.76
+  - 2400:da00::6666
   upstreams:
-    国外dns:
-    - https://1.1.1.1/dns-query
-    - https://dns.google/dns-query
-    - https://cloudflare-dns.com/dns-query
-    - https://dns.adguard.com/dns-query
-    国内dns:
-    - https://223.6.6.6/dns-query
-    - https://223.5.5.5/dns-query
+    DIRECT-DNS:
+    - 180.76.76.76
+    - 2400:da00::6666
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
-    兜底dns:
+    PROXY-DNS:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+    - https://cloudflare-dns.com/dns-query
+    iBL3ND-DNS:
     - https://1.1.1.1/dns-query
     - https://dns.google/dns-query
     - https://cloudflare-dns.com/dns-query
   forward:
   - proxy_rule_set:
       match: https://yfamilys.com/rule/DouYin.list
-      value: 国内dns
+      value: DIRECT-DNS
       disabled: false
   - proxy_rule_set:
       match: https://yfamilys.com/rule/TikTok.list
-      value: 国外dns
+      value: iBL3ND-DNS
       disabled: false
   - proxy_rule_set:
       match: https://raw.githubusercontent.com/IBL3ND/rule/refs/heads/main/Gemini.list
-      value: 国外dns
-      disabled: false
-  - proxy_rule_set:
-      match: https://yfamilys.com/rule/Gemini.list
-      value: 国外dns
-      disabled: false
-  - proxy_rule_set:
-      match: https://yfamilys.com/rule/OpenAI.list
-      value: 国外dns
-      disabled: false
-  - proxy_rule_set:
-      match: https://www.naiixi.com/Extra_Crypto.list
-      value: 国外dns
-      disabled: false
-  - proxy_rule_set:
-      match: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/rule/openai.list
-      value: 国外dns
-      disabled: false
-  - proxy_rule_set:
-      match: https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list
-      value: 国外dns
-      disabled: false
-  - proxy_rule_set:
-      match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OpenAI/OpenAI.list
-      value: 国外dns
-      disabled: false
-  - proxy_rule_set:
-      match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Crypto/Crypto.list
-      value: 国外dns
-      disabled: false
-  - proxy_rule_set:
-      match: https://yfamilys.com/rule/Binance.list
-      value: 国外dns
-      disabled: false
-  - proxy_rule_set:
-      match: https://yfamilys.com/rule/Telegram.list
-      value: 国外dns
-      disabled: false
-  - proxy_rule_set:
-      match: https://yfamilys.com/rule/YouTube.list
-      value: 国外dns
-      disabled: false
-  - proxy_rule_set:
-      match: https://yfamilys.com/rule/Instagram.list
-      value: 国外dns
-      disabled: false
-  - proxy_rule_set:
-      match: https://yfamilys.com/rule/Twitter.list
-      value: 国外dns
-      disabled: false
-  - proxy_rule_set:
-      match: https://yfamilys.com/rule/ProxyMedia.list
-      value: 国外dns
-      disabled: false
-  - proxy_rule_set:
-      match: https://yfamilys.com/rule/Google.list
-      value: 国外dns
-      disabled: false
-  - proxy_rule_set:
-      match: https://yfamilys.com/rule/Cloudflare.list
-      value: 国外dns
+      value: iBL3ND-DNS
       disabled: false
   - proxy_rule_set:
       match: https://kelee.one/Tool/Loon/Lsr/AI.lsr
-      value: 国外dns
+      value: iBL3ND-DNS
+      disabled: false
+  - proxy_rule_set:
+      match: https://yfamilys.com/rule/Gemini.list
+      value: iBL3ND-DNS
+      disabled: false
+  - proxy_rule_set:
+      match: https://www.naiixi.com/Extra_Crypto.list
+      value: iBL3ND-DNS
+      disabled: false
+  - proxy_rule_set:
+      match: https://yfamilys.com/rule/OpenAI.list
+      value: iBL3ND-DNS
+      disabled: false
+  - proxy_rule_set:
+      match: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/rule/openai.list
+      value: iBL3ND-DNS
+      disabled: false
+  - proxy_rule_set:
+      match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OpenAI/OpenAI.list
+      value: iBL3ND-DNS
+      disabled: false
+  - proxy_rule_set:
+      match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Crypto/Crypto.list
+      value: iBL3ND-DNS
+      disabled: false
+  - proxy_rule_set:
+      match: https://yfamilys.com/rule/Binance.list
+      value: iBL3ND-DNS
+      disabled: false
+  - proxy_rule_set:
+      match: https://yfamilys.com/rule/Twitter.list
+      value: iBL3ND-DNS
+      disabled: false
+  - proxy_rule_set:
+      match: https://yfamilys.com/rule/Telegram.list
+      value: iBL3ND-DNS
+      disabled: false
+  - proxy_rule_set:
+      match: https://yfamilys.com/rule/YouTube.list
+      value: iBL3ND-DNS
+      disabled: false
+  - proxy_rule_set:
+      match: https://yfamilys.com/rule/Instagram.list
+      value: iBL3ND-DNS
+      disabled: false
+  - proxy_rule_set:
+      match: https://yfamilys.com/rule/Cloudflare.list
+      value: iBL3ND-DNS
       disabled: false
   - proxy_rule_set:
       match: https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_proxy_list.module
-      value: 国外dns
+      value: iBL3ND-DNS
+      disabled: false
+  - proxy_rule_set:
+      match: https://yfamilys.com/rule/ProxyMedia.list
+      value: iBL3ND-DNS
       disabled: false
   - proxy_rule_set:
       match: https://raw.githubusercontent.com/Rabbit-Spec/Surge/refs/heads/Master/Rules/China.list
-      value: 国内dns
+      value: DIRECT-DNS
       disabled: false
   - proxy_rule_set:
       match: https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/direct.txt
-      value: 国内dns
+      value: DIRECT-DNS
       disabled: false
   - proxy_rule_set:
       match: https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_direct_list.module
-      value: 国内dns
-      disabled: false
-  - domain_wildcard:
-      match: '*.cn'
-      value: 国内dns
+      value: DIRECT-DNS
       disabled: false
   - domain_wildcard:
       match: '*'
-      value: 兜底dns
+      value: iBL3ND-DNS
       disabled: false
   proxy_nameservers:
-  - https://doh.pub/dns-query
-  - https://dns.alidns.com/dns-query
-  - https://cloudflare-dns.com/dns-query
-  - https://dns.google/dns-query
+  - PROXY-DNS
 policy_groups:
-- external:
-    name: 机场订阅
-    type: select
-    urls:
-    - 这里添加进你的订阅地址
-    block_quic: true
-    hidden: true
 - select:
     name: iBL3ND
     policies:
     - 手动选择
     - DIRECT
-    - 新国节点
     - 香港节点
     - 日本节点
+    - 新国节点
     - 韩国节点
     - 台湾节点
     - 美国节点
@@ -162,7 +150,7 @@ policy_groups:
     - 不丹节点
     - 缅甸节点
     - 老挝节点
-    - 澳大利亚
+    - 澳大利亚节点
     - 尼泊尔节点
     - 巴基斯坦节点
     - 孟加拉节点
@@ -189,6 +177,11 @@ policy_groups:
     - 伊拉克节点
     - 阿富汗节点
     - 也门节点
+    - 马尔代夫节点
+    - 不丹节点
+    - 塔吉克斯坦节点
+    - 土库曼斯坦节点
+    - 吉尔吉斯斯坦节点
     - 东帝汶节点
     - 亚美尼亚节点
     - 阿塞拜疆节点
@@ -316,6 +309,7 @@ policy_groups:
     - 塞内加尔节点
     - 塞舌尔节点
     - 塞拉利昂节点
+    - 新国节点
     - 所罗门群岛节点
     - 索马里节点
     - 南非节点
@@ -342,26 +336,30 @@ policy_groups:
     - 哥伦比亚节点
     - 摩洛哥节点
     flatten: false
-    icon: https://iili.io/K0KrBdQ.png
+    icon: https://iili.io/KBtLXCx.png
     hidden: false
 - select:
     name: AiTk节点
     policies:
-    - 台湾节点
-    - 日本节点
+    - 马来节点
+    - 专线节点
+    - 澳门节点
     - 韩国节点
-    - 新国节点
     - 美国节点
+    - 日本节点
+    - 台湾节点
+    - 新国节点
     flatten: true
-    icon: https://iili.io/KSBUGgn.png
+    filter: ^(?!.*(剩余|流量|套餐|到期)).*$
+    icon: https://iili.io/KjKWB5v.png
     hidden: false
 - select:
     name: 手动选择
-    policies:
-    - 机场订阅
+    policies: []
     flatten: true
+    filter: ^(?!.*(剩余|流量|套餐|到期)).*$
     block_quic: true
-    icon: https://iili.io/K0KvJv1.png
+    icon: https://iili.io/KyQjMVp.png
     hidden: false
 - smart:
     name: 香港节点
@@ -369,7 +367,6 @@ policy_groups:
     - 手动选择
     flatten: true
     filter: 🇭🇰|Hong Kong|Hong|HK|HKG|香港
-    block_quic: true
     icon: https://iili.io/FaAI3Bt.png
     hidden: false
 - smart:
@@ -393,16 +390,8 @@ policy_groups:
     policies:
     - 手动选择
     flatten: true
-    filter: 🇯🇵|Japan|Tokyo|JP|日本
+    filter: 🇯🇵|日本|Japan|JP
     icon: https://iili.io/Fa5AnTb.png
-    hidden: false
-- smart:
-    name: 韩国节点
-    policies:
-    - 手动选择
-    flatten: true
-    filter: 🇰🇷|韩国|Korea|KR
-    icon: https://iili.io/Fa5Mdn1.png
     hidden: false
 - smart:
     name: 美国节点
@@ -412,6 +401,14 @@ policy_groups:
     filter: 🇺🇸|美国|United States|USA|US|States
     icon: https://iili.io/FaAug7s.png
     hidden: false
+- smart:
+    name: 韩国节点
+    policies:
+    - 手动选择
+    flatten: true
+    filter: 🇰🇷|韩国|Korea|KR
+    icon: https://iili.io/Fa5Mdn1.png
+    hidden: true
 - smart:
     name: 马来节点
     policies:
@@ -558,7 +555,7 @@ policy_groups:
     filter: 🇰🇵|朝鲜|PRK|KP
     hidden: true
 - smart:
-    name: 澳大利亚
+    name: 澳大利亚节点
     policies:
     - 手动选择
     flatten: true
@@ -1827,15 +1824,21 @@ policy_groups:
     flatten: false
     hidden: true
 - select:
-    name: YouTube
+    name: YT
     policies:
     - iBL3ND
+    flatten: false
+    hidden: true
+- select:
+    name: DY
+    policies:
+    - DIRECT
     flatten: false
     hidden: true
 rules:
 - rule_set:
     match: https://yfamilys.com/rule/DouYin.list
-    policy: DIRECT
+    policy: DY
     disabled: false
 - rule_set:
     match: https://yfamilys.com/rule/TikTok.list
@@ -1866,10 +1869,6 @@ rules:
     policy: Ai
     disabled: false
 - rule_set:
-    match: https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list
-    policy: Ai
-    disabled: false
-- rule_set:
     match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OpenAI/OpenAI.list
     policy: Ai
     disabled: false
@@ -1891,14 +1890,14 @@ rules:
     disabled: false
 - rule_set:
     match: https://yfamilys.com/rule/YouTube.list
-    policy: YouTube
+    policy: YT
     disabled: false
 - rule_set:
     match: https://yfamilys.com/rule/Instagram.list
     policy: IG
     disabled: false
-- rule_set:
-    match: https://yfamilys.com/rule/ProxyMedia.list
+- protocol:
+    match: stun
     policy: iBL3ND
     disabled: false
 - rule_set:
@@ -1906,7 +1905,12 @@ rules:
     policy: iBL3ND
     disabled: false
 - rule_set:
+    name: PROXY
     match: https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_proxy_list.module
+    policy: iBL3ND
+    disabled: false
+- rule_set:
+    match: https://yfamilys.com/rule/ProxyMedia.list
     policy: iBL3ND
     disabled: false
 - rule_set:
@@ -1914,11 +1918,23 @@ rules:
     policy: DIRECT
     disabled: false
 - rule_set:
+    name: DIRECT
+    match: https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_direct_list.module
+    policy: DIRECT
+    disabled: false
+- rule_set:
     match: https://raw.githubusercontent.com/Rabbit-Spec/Surge/refs/heads/Master/Rules/China.list
     policy: DIRECT
     disabled: false
 - rule_set:
-    name: 域间路由
+    match: https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/direct.txt
+    policy: DIRECT
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/ChinaMax/ChinaMax.list
+    policy: DIRECT
+    disabled: false
+- rule_set:
     match: https://raw.githubusercontent.com/IBL3ND/rule/refs/heads/main/LAN.list
     policy: DIRECT
     disabled: false
@@ -1930,23 +1946,22 @@ scriptings:
     cron: '* * * * * ?'
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/TestFlight.js
     env:
-      TF: PpJMnnTY
+      TF: ky5bRwMY
     timeout: 120
     disabled: true
-- generic:
-    name: 和风天气小组件
-    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Weather_Widget.JS
-    timeout: 120
 - generic:
     name: 机场订阅小组件
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Sub_Widget.JS
     timeout: 120
 - generic:
+    name: 聚合热搜小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/HSW_Widget.JS
+- generic:
     name: 万年历小组件
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/CN_Cal.JS
 - generic:
-    name: 节日倒计时小组件
-    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Holiday_Countdown.js
+    name: 网络诊断雷达小组件
+    script_url: https://raw.githubusercontent.com/lylywayr/NetWork-Module/refs/heads/main/Egern/%E7%BD%91%E7%BB%9C%E8%AF%8A%E6%96%AD%E9%9B%B7%E8%BE%BE/%E7%BD%91%E7%BB%9C%E8%AF%8A%E6%96%AD%E9%9B%B7%E8%BE%BE.js
 - generic:
     name: 油价查询小组件
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Oil_Widget.JS
@@ -1957,51 +1972,88 @@ scriptings:
     name: 彩票开奖小组件
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Lottery-Widget.JS
 - generic:
-    name: 网络诊断雷达小组件
-    script_url: https://raw.githubusercontent.com/xcgtb/Egern-Widgets/main/Network-Pro.js
+    name: 数据中心小组件
+    script_url: https://raw.githubusercontent.com/magicdan3688/MyProxyScripts/refs/heads/main/ip-dch.js
 - generic:
-    name: ip数据中心小组件
-    script_url: https://raw.githubusercontent.com/shadowlynx319/Egern/main/ip-dch.js
+    name: 节日倒计时小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Holiday_Countdown.js
 - generic:
     name: '测试网络下载速度小组件 '
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/NetSpeed_Widget.JS
+- generic:
+    name: 流媒体与AI解锁检测小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Unlock-Detection_Widget.JS
+- generic:
+    name: 联通小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Unicom_Widget.JS
+- generic:
+    name: 汇率看板小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/FX_Rate.JS
+- generic:
+    name: 限免小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/App_Store_Widget.JS
 mitm:
   ca_p12: egern.p12
   ca_passphrase: egern
 widgets:
-- name: 测试网络下载速度
-  script_name: '测试网络下载速度小组件 '
 - name: 机场订阅
   script_name: 机场订阅小组件
+- name: 测试网络下载速度
+  script_name: '测试网络下载速度小组件 '
 - name: 虚拟货币
   script_name: 虚拟货币小组件
 - name: 油价查询
   script_name: 油价查询小组件
+  env:
+    region: hainan/haikou
+- name: 流媒体与AI解锁检测
+  script_name: 流媒体与AI解锁检测小组件
 - name: 彩票开奖
   script_name: 彩票开奖小组件
 - name: 节日倒计时
   script_name: 节日倒计时小组件
 - name: 万年历
   script_name: 万年历小组件
-- name: IP数据中心
-  script_name: ip数据中心小组件
-- name: 网络诊断雷达
-  script_name: 网络诊断雷达小组件
+- name: 数据中心
+  script_name: 数据中心小组件
+- name: 汇率组件
+  script_name: 汇率看板小组件
+- name: 限免
+  script_name: 限免小组件
 modules:
 - url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Telegram.yaml
   env:
-    CLIENT: Telegram
+    CLIENT: Turrit
   enabled: true
-- url: https://raw.githubusercontent.com/Maasea/sgmodule/master/YouTube.Enhance.sgmodule
+- url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Egern-YouTube.yaml
+  compat_arguments:
+    blockUpload: 'true'
+    blockShorts: 'false'
+    autoHd: 'false'
+    blockGames: 'true'
+    blockVerticalLive: 'true'
+    jumpAhead: 'true'
+    blockStore: 'true'
+    nativeDownload: 'true'
   enabled: true
 - url: https://github.com/DualSubs/YouTube/releases/latest/download/DualSubs.YouTube.yaml
   compat_arguments:
     Type: Translate
   enabled: true
-- url: https://reven.lovebabyforever.workers.dev/reven/iTunes.sgmodule
+- name: iTunes-系列解锁合集
+  url: http://script.hub/file/_start_/https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js/_end_/iTunes.sgmodule?type=qx-rewrite&target=surge-module&del=true&jqEnabled=true
   enabled: true
 - name: Revenuecat-系列解锁合集
   url: http://script.hub/file/_start_/https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js/_end_/Reheji.sgmodule?type=qx-rewrite&target=surge-module&del=true&jqEnabled=true
+  enabled: true
+- url: https://raw.githubusercontent.com/unknowntokyo/surge-list/master/Egern/IP_Check.yaml
+  compat_arguments:
+    指定策略组: iBL3ND
+  env:
+    SHOW_SPEED_TEST: 开启
+    SPEED_TEST_PACKET: 4MB
+    SPEED_TEST_TIMEOUT: 5秒
+    SHOW_IPPURE: 开启
   enabled: true
 - url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/surge-loon-to-egern.yaml
   enabled: true
@@ -2009,7 +2061,11 @@ modules:
   enabled: true
 - url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E2%AD%90%EF%B8%8F%20BoxJs.official.sgmodule
   enabled: true
-- url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E2%AD%90%EF%B8%8F%20Sub-Store.official.sgmodule
+- url: https://raw.githubusercontent.com/sub-store-org/Sub-Store/refs/heads/master/config/Egern.yaml
+  compat_arguments:
+    timeout: '500'
   enabled: true
 - url: https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/refs/heads/main/modules/script-hub.beta.surge.sgmodule
   enabled: true
+default_subscription_group: iBL3ND
+default_proxy_group: iBL3ND
