@@ -1896,10 +1896,6 @@ rules:
     match: https://yfamilys.com/rule/Instagram.list
     policy: IG
     disabled: false
-- protocol:
-    match: stun
-    policy: iBL3ND
-    disabled: false
 - rule_set:
     match: https://yfamilys.com/rule/Cloudflare.list
     policy: iBL3ND
@@ -1937,6 +1933,10 @@ rules:
 - rule_set:
     match: https://raw.githubusercontent.com/IBL3ND/rule/refs/heads/main/LAN.list
     policy: DIRECT
+    disabled: false
+- protocol:
+    match: stun
+    policy: iBL3ND
     disabled: false
 - default:
     policy: iBL3ND
