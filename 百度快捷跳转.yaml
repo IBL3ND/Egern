@@ -1,82 +1,80 @@
 name: 百度搜索快捷跳转
 description: 在百度搜索框用前缀快速跳到对应网站搜索：db 豆瓣、zh 知乎、wb 微博、gh GitHub、yt YouTube、bli B站、sp SpankBang、ph Pornhub、wk 维基、gi Google 图片、by Bing，无前缀默认 Google；google.cn 跳到 google.com
 author: iBL3ND
-dns: {}
 url_rewrites:
-- match: '^https?://(www|m).baidu.com/s?.*(wd|word)=db+([^&]+)'
-  location: 'https://m.douban.com/search?query=$3'
+- match: ^https?://(www|m)\.baidu\.com/s\?.*(wd|word)=db\+([^&]+)
+  location: https://m.douban.com/search?query=$3
   status_code: 302
-- match: '^https?://(www|m).baidu.com/s?.*(wd|word)=([^+]+)+db'
-  location: 'https://m.douban.com/search?query=$3'
+- match: ^https?://(www|m)\.baidu\.com/s\?.*(wd|word)=([^\+]+)\+db
+  location: https://m.douban.com/search?query=$3
   status_code: 302
-- match: '^https?://(www|m).baidu.com/s?.*(wd|word)=zh+([^&]+)'
-  location: 'https://www.zhihu.com/search?q=$3'
+- match: ^https?://(www|m)\.baidu\.com/s\?.*(wd|word)=zh\+([^&]+)
+  location: https://www.zhihu.com/search?q=$3
   status_code: 302
-- match: '^https?://(www|m).baidu.com/s?.*(wd|word)=([^+]+)+zh'
-  location: 'https://www.zhihu.com/search?q=$3'
+- match: ^https?://(www|m)\.baidu\.com/s\?.*(wd|word)=([^\+]+)\+zh
+  location: https://www.zhihu.com/search?q=$3
   status_code: 302
-- match: '^https?://(www|m).baidu.com/s?.*(wd|word)=wb+([^&]+)'
-  location: 'https://s.weibo.com/weibo/$3'
+- match: ^https?://(www|m)\.baidu\.com/s\?.*(wd|word)=wb\+([^&]+)
+  location: https://s.weibo.com/weibo/$3
   status_code: 302
-- match: '^https?://(www|m).baidu.com/s?.*(wd|word)=([^+]+)+wb'
-  location: 'https://s.weibo.com/weibo/$3'
+- match: ^https?://(www|m)\.baidu\.com/s\?.*(wd|word)=([^\+]+)\+wb
+  location: https://s.weibo.com/weibo/$3
   status_code: 302
-- match: '^https?://(www|m).baidu.com/s?.*(wd|word)=gh+([^&]+)'
-  location: 'https://github.com/search?q=$3'
+- match: ^https?://(www|m)\.baidu\.com/s\?.*(wd|word)=gh\+([^&]+)
+  location: https://github.com/search?q=$3
   status_code: 302
-- match: '^https?://(www|m).baidu.com/s?.*(wd|word)=([^+]+)+gh'
-  location: 'https://github.com/search?q=$3'
+- match: ^https?://(www|m)\.baidu\.com/s\?.*(wd|word)=([^\+]+)\+gh
+  location: https://github.com/search?q=$3
   status_code: 302
-- match: '^https?://(www|m).baidu.com/s?.*(wd|word)=yt+([^&]+)'
-  location: 'https://www.youtube.com/results?search_query=$3'
+- match: ^https?://(www|m)\.baidu\.com/s\?.*(wd|word)=yt\+([^&]+)
+  location: https://www.youtube.com/results?search_query=$3
   status_code: 302
-- match: '^https?://(www|m).baidu.com/s?.*(wd|word)=([^+]+)+yt'
-  location: 'https://www.youtube.com/results?search_query=$3'
+- match: ^https?://(www|m)\.baidu\.com/s\?.*(wd|word)=([^\+]+)\+yt
+  location: https://www.youtube.com/results?search_query=$3
   status_code: 302
-- match: '^https?://(www|m).baidu.com/s?.*(wd|word)=bli+([^&]+)'
-  location: 'https://m.bilibili.com/search?keyword=$3'
+- match: ^https?://(www|m)\.baidu\.com/s\?.*(wd|word)=bli\+([^&]+)
+  location: https://m.bilibili.com/search?keyword=$3
   status_code: 302
-- match: '^https?://(www|m).baidu.com/s?.*(wd|word)=([^+]+)+bli'
-  location: 'https://m.bilibili.com/search?keyword=$3'
+- match: ^https?://(www|m)\.baidu\.com/s\?.*(wd|word)=([^\+]+)\+bli
+  location: https://m.bilibili.com/search?keyword=$3
   status_code: 302
-- match: '^https?://(www|m).baidu.com/s?.*(wd|word)=sp+([^&]+)'
-  location: 'https://spankbang.com/s/$3'
+- match: ^https?://(www|m)\.baidu\.com/s\?.*(wd|word)=sp\+([^&]+)
+  location: https://spankbang.com/s/$3
   status_code: 302
-- match: '^https?://(www|m).baidu.com/s?.*(wd|word)=([^+]+)+sp'
-  location: 'https://spankbang.com/s/$3'
+- match: ^https?://(www|m)\.baidu\.com/s\?.*(wd|word)=([^+]+)\+sp
+  location: https://spankbang.com/s/$3
   status_code: 302
-- match: '^https?://(www|m).baidu.com/s?.*(wd|word)=ph+([^&]+)'
-  location: 'https://cn.pornhub.com/video/search?search=$3'
+- match: ^https?://(www|m)\.baidu\.com/s\?.*(wd|word)=ph\+([^&]+)
+  location: https://cn.pornhub.com/video/search?search=$3
   status_code: 302
-- match: '^https?://(www|m).baidu.com/s?.*(wd|word)=([^+]+)+ph'
-  location: 'https://cn.pornhub.com/video/search?search=$3'
+- match: ^https?://(www|m)\.baidu\.com/s\?.*(wd|word)=([^+]+)\+ph
+  location: https://cn.pornhub.com/video/search?search=$3
   status_code: 302
-- match: '^https?://(www|m).baidu.com/s?.*(wd|word)=wk+([^&]+)'
-  location: 'https://zh.wikipedia.org/wiki/$3'
+- match: ^https?://(www|m)\.baidu\.com/s\?.*(wd|word)=wk\+([^&]+)
+  location: https://zh.wikipedia.org/wiki/$3
   status_code: 302
-- match: '^https?://(www|m).baidu.com/s?.*(wd|word)=([^+]+)+wk'
-  location: 'https://zh.wikipedia.org/wiki/$3'
+- match: ^https?://(www|m)\.baidu\.com/s\?.*(wd|word)=([^\+]+)\+wk
+  location: https://zh.wikipedia.org/wiki/$3
   status_code: 302
-- match: '^https?://(www|m).baidu.com/s?.*(wd|word)=gi+([^&]+)'
-  location: 'https://www.google.com/search?&tbm=isch&q=$3'
+- match: ^https?://(www|m)\.baidu\.com/s\?.*(wd|word)=gi\+([^&]+)
+  location: https://www.google.com/search?&tbm=isch&q=$3
   status_code: 302
-- match: '^https?://(www|m).baidu.com/s?.*(wd|word)=([^+]+)+gi'
-  location: 'https://www.google.com/search?&tbm=isch&q=$3'
+- match: ^https?://(www|m)\.baidu\.com/s\?.*(wd|word)=([^\+]+)\+gi
+  location: https://www.google.com/search?&tbm=isch&q=$3
   status_code: 302
-- match: '^https?://(www|m).baidu.com/s?.*(wd|word)=by+([^&]+)'
-  location: 'https://www.bing.com/search?q=$3'
+- match: ^https?://(www|m)\.baidu\.com/s\?.*(wd|word)=by\+([^&]+)
+  location: https://www.bing.com/search?q=$3
   status_code: 302
-- match: '^https?://(www|m).baidu.com/s?.*(wd|word)=([^+]+)+by'
-  location: 'https://www.bing.com/search?q=$3'
+- match: ^https?://(www|m)\.baidu\.com/s\?.*(wd|word)=([^\+]+)\+by
+  location: https://www.bing.com/search?q=$3
   status_code: 302
-- match: '^https?://(www|m).baidu.com/s?.*(wd|word)=([^&]+)'
-  location: 'https://www.google.com/search?q=$3'
+- match: ^https?://(www|m)\.baidu\.com/s\?.*(wd|word)=([^&]+)
+  location: https://www.google.com/search?q=$3
   status_code: 302
-- match: '^https?://(www.)?(g|google)\.cn'
-  location: 'https://www.google.com'
-  status_code: 302
+- match: ^https?:\/\/(www.)?(g|google)\.cn
+  location: https://www.google.com
 mitm:
   hostnames:
     includes:
     - www.baidu.com
-    - m.baidu.com
+    - m.baidu.com    - m.baidu.com
