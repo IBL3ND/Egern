@@ -2036,10 +2036,6 @@ modules:
     blockStore: 'true'
     nativeDownload: 'true'
   enabled: true
-- url: https://github.com/DualSubs/YouTube/releases/latest/download/DualSubs.YouTube.yaml
-  compat_arguments:
-    Type: Translate
-  enabled: true
 - name: iTunes-系列解锁合集
   url: http://script.hub/file/_start_/https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js/_end_/iTunes.sgmodule?type=qx-rewrite&target=surge-module&del=true&jqEnabled=true
   enabled: true
