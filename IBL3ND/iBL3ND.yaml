@@ -1,6 +1,8 @@
+ipv6: false
 allow_external_connections: true
 vif_only: true
-close_connections_on_policy_change: false
+block_quic: true
+close_connections_on_policy_change: true
 hide_vpn_icon: false
 geoip_db_url: https://github.com/xream/geoip/releases/latest/download/ipinfo.country.mmdb
 asn_db_url: https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-ASN.mmdb
@@ -10,6 +12,10 @@ udp_latency_test_url: google.com@8.8.8.8
 compat_route: true
 dns:
   upstreams:
+    PROXY-DNS:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+    - https://dns.google/dns-query
     iBL3ND-DNS:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
@@ -22,27 +28,23 @@ dns:
       value: iBL3ND-DNS
       disabled: false
   proxy_nameservers:
-  - https://1.1.1.1/dns-query
-  - https://doh.pub/dns-query
-  - https://dns.google/dns-query
-  - https://dns.alidns.com/dns-query
+  - PROXY-DNS
 policy_groups:
 - external:
-    name: 订阅
+    name: 机场订阅
     type: select
     urls:
     - 这里添加你的机场订阅链接
     hidden: true
 - select:
-    name: PROXY
+    name: iBL3ND
     policies:
-    - 订阅
+    - 机场订阅
     flatten: true
-    icon: https://iili.io/fKClisn.png
+    icon: https://iili.io/KBtLXCx.png
     hidden: false
 rules:
 - rule_set:
-    name: DIRECT
     match: https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_direct_list.module
     policy: DIRECT
     disabled: false
@@ -74,55 +76,30 @@ rules:
     policy: DIRECT
     disabled: false
 - default:
-    policy: PROXY
-scriptings:
-- generic:
-    name: 聚合热搜小组件
-    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/HSW_Widget.JS
-- generic:
-    name: 财联社小组件
-    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/CLS_Widget.JS
-- generic:
-    name: 万年历小组件
-    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/CN_Cal.JS
-- generic:
-    name: 节日倒计时小组件
-    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Holiday_Countdown.js
-- generic:
-    name: 油价查询小组件
-    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Oil_Widget.JS
-- generic:
-    name: 虚拟货币小组件
-    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Crypto_Widget.JS
-- generic:
-    name: 彩票开奖小组件
-    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Lottery-Widget.JS
+    policy: iBL3ND
 mitm:
   ca_p12: egern.p12
   ca_passphrase: egern
-widgets:
-- name: 油价查询
-  script_name: 油价查询小组件
-- name: 虚拟货币
-  script_name: 虚拟货币小组件
-- name: 彩票开奖
-  script_name: 彩票开奖小组件
-- name: 节日倒计时
-  script_name: 节日倒计时小组件
-- name: 万年历
-  script_name: 万年历小组件
-- name: 聚合热搜
-  script_name: 聚合热搜小组件
-- name: 财联社
-  script_name: 财联社小组件
 modules:
+- url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Sub_Widget.yaml
+  enabled: false
+- url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/WeatherWdg.yaml
+  enabled: true
+- url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/CN_Cal.yaml
+  enabled: true
+- url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Oil_Widget.yaml
+  enabled: true
+- url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Holiday_Countdown.yaml
+  enabled: true
+- url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Egern-YouTube.yaml
+  enabled: true
 - url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Telegram.yaml
   env:
     CLIENT: Telegram
   enabled: true
-- url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/surge-loon-to-egern.yaml
+- url: https://ddgksf2013.top/module/ScriptHub.Egern.sgmodule
   enabled: true
-- url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Egern-YouTube.yaml
+- url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/surge-loon-to-egern.yaml
   enabled: true
 - url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E2%AD%90%EF%B8%8F%20BoxJs.official.sgmodule
   enabled: true
