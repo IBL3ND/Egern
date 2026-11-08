@@ -1910,20 +1910,12 @@ rules:
     policy: iBL3ND
     disabled: false
 - rule_set:
-    match: https://raw.githubusercontent.com/Rabbit-Spec/Surge/refs/heads/Master/Rules/ChinaCIDR.list
-    policy: DIRECT
-    disabled: false
-- rule_set:
     name: DIRECT
     match: https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_direct_list.module
     policy: DIRECT
     disabled: false
 - rule_set:
     match: https://raw.githubusercontent.com/Rabbit-Spec/Surge/refs/heads/Master/Rules/China.list
-    policy: DIRECT
-    disabled: false
-- rule_set:
-    match: https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/direct.txt
     policy: DIRECT
     disabled: false
 - rule_set:
