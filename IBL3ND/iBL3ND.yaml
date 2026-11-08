@@ -37,7 +37,7 @@ policy_groups:
     - 这里添加你的机场订阅链接
     hidden: true
 - select:
-    name: iBL3ND
+    name: PROXY
     policies:
     - 机场订阅
     flatten: true
@@ -50,10 +50,6 @@ rules:
     disabled: false
 - rule_set:
     match: https://raw.githubusercontent.com/Rabbit-Spec/Surge/refs/heads/Master/Rules/China.list
-    policy: DIRECT
-    disabled: false
-- rule_set:
-    match: https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/direct.txt
     policy: DIRECT
     disabled: false
 - rule_set:
@@ -76,7 +72,7 @@ rules:
     policy: DIRECT
     disabled: false
 - default:
-    policy: iBL3ND
+    policy: PROXY
 mitm:
   ca_p12: egern.p12
   ca_passphrase: egern
@@ -84,6 +80,8 @@ modules:
 - url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Sub_Widget.yaml
   enabled: false
 - url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/WeatherWdg.yaml
+  enabled: true
+- url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/NetSpeed_Widget.yaml
   enabled: true
 - url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/CN_Cal.yaml
   enabled: true
