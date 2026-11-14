@@ -37,10 +37,6 @@ dns:
     - https://cloudflare-dns.com/dns-query
   forward:
   - proxy_rule_set:
-      match: https://yfamilys.com/rule/DouYin.list
-      value: DIRECT-DNS
-      disabled: false
-  - proxy_rule_set:
       match: https://yfamilys.com/rule/TikTok.list
       value: iBL3ND-DNS
       disabled: false
@@ -49,7 +45,7 @@ dns:
       value: iBL3ND-DNS
       disabled: false
   - proxy_rule_set:
-      match: https://kelee.one/Tool/Loon/Lsr/AI.lsr
+      match: https://yfamilys.com/rule/MetaAI.list
       value: iBL3ND-DNS
       disabled: false
   - proxy_rule_set:
@@ -109,6 +105,10 @@ dns:
       value: iBL3ND-DNS
       disabled: false
   - proxy_rule_set:
+      match: https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/egern/proxy.yaml
+      value: iBL3ND-DNS
+      disabled: false
+  - proxy_rule_set:
       match: https://raw.githubusercontent.com/Rabbit-Spec/Surge/refs/heads/Master/Rules/China.list
       value: DIRECT-DNS
       disabled: false
@@ -118,6 +118,14 @@ dns:
       disabled: false
   - proxy_rule_set:
       match: https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_direct_list.module
+      value: DIRECT-DNS
+      disabled: false
+  - proxy_rule_set:
+      match: https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/egern/cn.yaml
+      value: DIRECT-DNS
+      disabled: false
+  - proxy_rule_set:
+      match: https://yfamilys.com/rule/DouYin.list
       value: DIRECT-DNS
       disabled: false
   - domain_wildcard:
