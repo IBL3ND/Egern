@@ -9,7 +9,7 @@ asn_db_url: https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-ASN.mmd
 proxy_latency_test_url: https://connectivitycheck.gstatic.com/generate_204
 direct_latency_test_url: https://www.qq.com
 udp_latency_test_url: google.com@8.8.8.8
-compat_route: true
+compat_route: false
 dns:
   upstreams:
     PROXY-DNS:
@@ -30,22 +30,59 @@ dns:
   proxy_nameservers:
   - PROXY-DNS
 policy_groups:
+- select:
+    name: PROXY
+    policies:
+    - 机场订阅
+    flatten: true
+    filter: ^(?!.*(剩余|流量|套餐|到期|官网|余额|账单|充值|优惠|活动|办理|订购|赠送|积分|续约|退订)).*$
+    icon: https://iili.io/KBtLXCx.png
+    hidden: false
+- select:
+    name: Ai-TikTok
+    policies:
+    - 机场订阅
+    flatten: true
+    filter: ^(?!.*(剩余|流量|套餐|到期|官网|余额|账单|充值|优惠|活动|办理|订购|赠送|积分|续约|退订|香港)).*$
+    icon: https://iili.io/KSBUGgn.png
+    hidden: false
 - external:
     name: 机场订阅
     type: select
     urls:
     - 这里添加你的机场订阅链接
     hidden: true
-- select:
-    name: PROXY
-    policies:
-    - 机场订阅
-    flatten: true
-    icon: https://iili.io/KBtLXCx.png
-    hidden: false
 rules:
 - rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/TikTok/TikTok.list
+    policy: Ai-TikTok
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/Repcz/Tool/X/Egern/Rules/TikTok.yaml
+    policy: Ai-TikTok
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/Repcz/Tool/X/Egern/Rules/OpenAI.yaml
+    policy: Ai-TikTok
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OpenAI/OpenAI.list
+    policy: Ai-TikTok
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/Repcz/Tool/X/Egern/Rules/AI.yaml
+    policy: Ai-TikTok
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/YUDIDIFEI/Scripts/master/rule/Egern/AI/AI.yaml
+    policy: Ai-TikTok
+    disabled: false
+- rule_set:
     match: https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_direct_list.module
+    policy: DIRECT
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/egern/cn.yaml
     policy: DIRECT
     disabled: false
 - rule_set:
@@ -90,6 +127,16 @@ modules:
 - url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Holiday_Countdown.yaml
   enabled: true
 - url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Egern-YouTube.yaml
+  compat_arguments:
+    屏蔽上传按钮: 'true'
+    屏蔽选段按钮: 'true'
+    blockShorts: 'false'
+    autoHd: 'false'
+    blockGames: 'true'
+    blockVerticalLive: 'true'
+    jumpAhead: 'true'
+    blockStore: 'true'
+    nativeDownload: 'true'
   enabled: true
 - url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Telegram.yaml
   env:
