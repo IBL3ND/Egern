@@ -349,14 +349,14 @@ policy_groups:
     - 台湾节点
     - 新国节点
     flatten: true
-    filter: ^(?!.*(剩余|流量|套餐|到期)).*$
+    filter: ^(?!.*(剩余|流量|套餐|到期|过期|重置|距离|官网|余额|账单|充值|续费|续约|购买|商店|订购|办理|退订|优惠|活动|赠送|积分|公告|通知|维护|失效|更新|防走失|迷路|客服|群)).*$
     icon: https://iili.io/KjKWB5v.png
     hidden: false
 - select:
     name: 手动选择
     policies: []
     flatten: true
-    filter: ^(?!.*(剩余|流量|套餐|到期)).*$
+    filter: ^(?!.*(剩余|流量|套餐|到期|过期|重置|距离|官网|余额|账单|充值|续费|续约|购买|商店|订购|办理|退订|优惠|活动|赠送|积分|公告|通知|维护|失效|更新|防走失|迷路|客服|群)).*$
     block_quic: true
     icon: https://iili.io/KyQjMVp.png
     hidden: false
